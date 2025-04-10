@@ -87,10 +87,10 @@ h2 {
 
 .card {
     background: var(--background-blue);
-    border: 1px solid rgba(0, 255, 204, 0.2);
     border-radius: 10px;
     padding: 1.5rem;
     margin-bottom: 2rem;
+    height: auto;
 }
 
 ul {
@@ -98,14 +98,17 @@ ul {
 }
 
 .btn {
-    background: #00ffcc;
+    background: var(--font-color);
     color: black;
-    padding: 0.5rem 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
     font-size: 1rem;
+    font-family: 'CubicFive10', monospace;
+    margin-top: 2rem; /* Added margin-top */
+    padding: 20px; /* Added padding */
+    display: flex;
+    align-self: flex-start;
 }
 
 .partners {
@@ -145,7 +148,7 @@ details {
 
 summary {
     font-weight: bold;
-    color: #00ffcc;
+    color: var(--font-color);
 }
 
 @media (max-width: 768px) {
