@@ -60,3 +60,18 @@ footer {
     font-size: 0.9rem;
     color: #aaa;
 }
+footer>a{
+    color: #aaa;
+    text-decoration: none;
+}
+details {
+    margin-bottom: 1rem;
+    background: #2a2a45;
+    padding: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  summary {
+    font-weight: bold;
+    color: #00ffcc;
+  }
