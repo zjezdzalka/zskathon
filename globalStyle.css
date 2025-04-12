@@ -1,180 +1,78 @@
-* {
-    margin: 0;
+*{
+    margin:0;
     padding: 0;
-    box-sizing: border-box;
-    --background-blue: rgb(9, 21, 109);
-    --background-light-blue: rgb(16, 25, 107);
-    --background-dark-blue: rgb(7, 16, 77);
-    --font-color: #DEF249;
 }
-
-@font-face {
-    font-family: 'CubicFive10';
-    src:url('CubicFive10.ttf.woff') format('woff'),
-        url('CubicFive10.ttf.svg#CubicFive10') format('svg'),
-        url('CubicFive10.ttf.eot'),
-        url('CubicFive10.ttf.eot?#iefix') format('embedded-opentype'); 
-    font-weight: normal;
-    font-style: normal;
-}
-
 body {
-    font-family: monospace;
-    background: linear-gradient(to bottom right, var(--background-dark-blue), var(--background-light-blue));
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background: linear-gradient(to bottom right, #0c0c3c, #1a1a2e);
     color: white;
 }
-
-
 header, section, footer {
     max-width: 1000px;
     margin: auto;
-    padding: 2rem 1rem; /* mobile-friendly padding */
-}
-
+    padding: 2rem;
+} 
 header {
     text-align: center;
 }
-
 header h1 {
-    /* font-size: 41.573px; /* Exact match to logo text */
-    font-size: 2em;
-    font-family: 'CubicFive10', monospace;
-    color: white;
+    font-size: 3rem;
+    color: #00ffcc;
     letter-spacing: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    line-height: 1;
-    margin-top: calc(40.9% * 200px); /* Matching logo's top margin */
 }
-
-header h1 p{
-    font-size: 1.55em;
-    margin-bottom: 0.05em;
-}
-
-header h1 img {
-    height: 4.81em; /* Ensures logo scales with text */
-}
-
-header h1 img {
-    width: auto;
-    vertical-align: middle;
-}
-
-@media (max-width: 768px) {
-    header h1 {
-        /* When logo scales down, maintain ratio */
-        font-size: min(8.5vw, calc(20.7865% * 150px)); 
-        /* Assuming logo scales to max 150px tall on mobile */
-        padding-top: calc(40.9% * 150px - 0.3em);
-    }
-    header h1 img {
-        height: 150px; /* Scaled down logo */
-    }
-}
-
-
 h2 {
-    color: var(--font-color);
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    font-family: 'CubicFive10', monospace;
+    color: #00ffcc;
 }
-
 .card {
-    background: var(--background-blue);
+    background: #1f1f3a;
+    border: 1px solid rgba(0, 255, 204, 0.2);
     border-radius: 10px;
     padding: 1.5rem;
     margin-bottom: 2rem;
-    height: auto;
 }
-
 ul {
     padding-left: 1.5rem;
 }
-
 .btn {
-    background: var(--font-color);
+    background: #00ffcc;
     color: black;
+    padding: 0.5rem 1rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1rem;
-    font-family: 'CubicFive10', monospace;
-    margin-top: 2rem; /* Added margin-top */
-    padding: 20px; /* Added padding */
-    display: flex;
-    align-self: flex-start;
+    margin-top: 1rem;
+    display: inline-block;
 }
-
 .partners {
     display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
     margin-top: 1rem;
 }
-
 .partner-logo {
     background: white;
     width: 100px;
     height: 60px;
     border-radius: 5px;
 }
-
 footer {
     text-align: center;
     font-size: 0.9rem;
     color: #aaa;
-    padding: 1rem;
 }
-
-footer > a {
+footer>a{
     color: #aaa;
     text-decoration: none;
 }
-
 details {
     margin-bottom: 1rem;
     background: #2a2a45;
     padding: 1rem;
     border-radius: 8px;
     cursor: pointer;
-}
-
-summary {
+  }
+  summary {
     font-weight: bold;
-    color: var(--font-color);
-}
-
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-        flex-direction: column;
-        gap: 0.3rem;
-    }
-
-    .card {
-        padding: 1rem;
-    }
-
-    .btn {
-        width: 100%;
-        padding: 0.75rem;
-    }
-
-    .partner-logo {
-        width: 80px;
-        height: 50px;
-    }
-}
-
-#event-date {
-    font-size: 1.5rem;
-    color: var(--font-color);
-    margin-top: 1rem;
-}
+    color: #00ffcc;
+  }
