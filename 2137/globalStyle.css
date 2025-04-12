@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +23,7 @@
 }
 
 body {
-    font-family: monospace;
+    font-family: "Lexend", "Funnel Display", sans-serif, monospace;
     background: linear-gradient(to bottom right, var(--background-dark-blue), var(--background-light-blue));
     color: white;
     min-height: 100vh;
@@ -78,6 +82,7 @@ h2 {
     color: var(--font-color);
     font-size: 1.8rem;
     margin-bottom: 1rem;
+    letter-spacing: 4px;
     text-transform: uppercase;
     font-family: 'CubicFive10', monospace;
 }
