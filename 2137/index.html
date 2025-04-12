@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="pl">
     <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZSKathon 2025</title>
-    <link rel="stylesheet" href="globalStyle.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ZSKathon25'</title>
+        <link rel="stylesheet" href="globalStyle.css">
     </head>
     <body>
 
     <header>
         <h1><img src="../logo_white.png"/><p>&nbsp;2025</p></h1>
+        <br>
         <p id="event-date">24–25 maja</p>
+        <br>
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
     </header>
 
     <section class="card">
@@ -31,7 +36,7 @@
 
     <section class="card">
         <h2>Rejestracja</h2>
-        <p>Aby wziąć udział w wydarzeniu, zarejestruj swoją drużynę (3-5 osób) za pomocą poniższego formularza.</p>
+        <p>Aby wziąć udział w wydarzeniu, zarejestruj swoją drużynę (2-5 osób) za pomocą poniższego formularza.</p>
         <a href="https://forms.office.com/e/yuftKGzWRK" class="btn" target="_blank">FORMULARZ</a>
     </section>
 
@@ -74,6 +79,60 @@
 
         gtag('config', 'G-4WHQGPXYFT');
         // zgadza się, liczymy ile osób tu zajrzało na stronkę ;)
+    </script>
+
+    <script>
+        const countdownStart = new Date('2025-04-01T00:00:00').getTime();
+        const eventStart = new Date('2025-05-24T10:00:00').getTime();
+        const eventEnd = new Date('2025-05-25T23:59:59').getTime();
+        const totalCountdownDuration = eventStart - countdownStart;
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            let distance, progress, statusText;
+
+            if (now < eventStart) {
+                distance = eventStart - now;
+                const elapsed = now - countdownStart;
+                progress = Math.min((elapsed / totalCountdownDuration) * 100, 100);
+                statusText = `24-25 maja | ${formatTime(distance)}`;
+            }
+            else if (now <= eventEnd) {
+                progress = 100;
+                statusText = "24-25 maja | in progress...";
+            }
+            else {
+                progress = 100;
+                statusText = "see you next edition!";
+            }
+
+            // Update UI
+            document.getElementById("event-date").textContent = statusText;
+            document.getElementById("progress-bar").style.width = `${progress}%`;
+
+            const redIntensity = Math.min(progress, 100);
+            
+            // Visual feedback
+            const progressBarContainer = document.getElementById("progress-bar-container");
+            if (now >= eventStart) {
+                progressBarContainer.style.display = "none";
+            }
+
+            const progressBar = document.getElementById("progress-bar");
+
+            progressBar.innerText = `${progress.toFixed(0)}%`;
+        }
+
+        function formatTime(ms) {
+            const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+            return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
