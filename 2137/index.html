@@ -12,7 +12,6 @@
         <h1><img src="../logo_white.png"/><p>&nbsp;2025</p></h1>
         <br>
         <p id="event-date">24–25 maja</p>
-        <br>
         <div id="progress-bar-container">
             <div id="progress-bar"></div>
         </div>
@@ -103,16 +102,12 @@
             }
             else {
                 progress = 100;
-                statusText = "see you next edition!";
+                statusText = "see you next edition! ⌨️";
             }
 
-            // Update UI
             document.getElementById("event-date").textContent = statusText;
             document.getElementById("progress-bar").style.width = `${progress}%`;
-
-            const redIntensity = Math.min(progress, 100);
             
-            // Visual feedback
             const progressBarContainer = document.getElementById("progress-bar-container");
             if (now >= eventStart) {
                 progressBarContainer.style.display = "none";
