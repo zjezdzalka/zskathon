@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
@@ -73,7 +72,6 @@ header h1 {
     flex-wrap: wrap;
     gap: 0.5rem;
     line-height: 1;
-    margin-top: calc(40.9% * 200px);
 }
 
 header h1 p{
