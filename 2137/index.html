@@ -151,10 +151,10 @@
         });
     </script>
     <script>
-        /* Generate animated background with small stars falling */
-        const starCount = 50; // Number of stars
-        const starColor = "rgba(255, 255, 255, 0.5)"; // Color of stars
+        const starCount = 75;
+        const starColor = "rgba(255, 255, 255, 0.5)";
         const starContainer = document.createElement("div");
+
         starContainer.style.position = "fixed";
         starContainer.style.top = "0";
         starContainer.style.left = "0";
@@ -163,9 +163,9 @@
         starContainer.style.pointerEvents = "none";
         starContainer.style.overflow = "hidden";
         starContainer.style.zIndex = "-1";
+
         document.body.appendChild(starContainer);
 
-        // Function to get the full document height
         function getDocumentHeight() {
             return Math.max(
                 document.body.scrollHeight,
@@ -176,9 +176,7 @@
             );
         }
 
-        // Function to create and animate stars
         function createStars() {
-            // Clear existing stars
             while (starContainer.firstChild) {
                 starContainer.removeChild(starContainer.firstChild);
             }
@@ -186,7 +184,7 @@
             const docHeight = getDocumentHeight();
             
             for (let i = 0; i < starCount; i++) {
-                let starSize = Math.floor(Math.random() * 16) + 10; // Size of stars in pixels (random between 10 and 30)
+                let starSize = Math.floor(Math.random() * 16) + 10; /* (10 - 25px) */
         
                 const star = document.createElement("div");
                 star.style.position = "absolute";
@@ -195,16 +193,14 @@
                 star.style.backgroundColor = starColor;
                 star.style.opacity = Math.random() * 0.5 + 0.5;
                 
-                // Position at the very top (just above viewport)
                 star.style.top = `-${starSize}px`;
                 star.style.left = `${Math.random() * 100}vw`;
                 
                 starContainer.appendChild(star);
 
-                // Random fall duration (6-12 seconds)
+                // (6-12 sekund)
                 const fallDuration = Math.random() * 6000 + 6000;
                 
-                // Animate from top to bottom
                 const fallAnimation = star.animate([
                     { transform: `translateY(0)` },
                     { transform: `translateY(${docHeight + starSize}px)` }
@@ -214,17 +210,12 @@
                     iterations: Infinity
                 });
 
-                // Add slight delay to each star's animation for variety
                 fallAnimation.startTime = Math.random() * 9000;
             }
         }
 
-        // Initial creation of stars
         createStars();
-
-        // Recreate stars when window resizes
         window.addEventListener("resize", createStars);
-
     </script>
 </body>
 </html>
