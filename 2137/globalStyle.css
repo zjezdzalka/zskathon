@@ -10,9 +10,7 @@
     --background-dark-blue-transparent: #040b3dee;
     --white-half-transparent: #f8f8fc7c;
     --white: #F8F8FC;
-    --font-color: #E3B61E;
-    --card: #424B8E;
-
+    --font-color: #DEF249;
 }
 
 @font-face {
@@ -119,7 +117,7 @@ header h1 img {
 #event-date {
     font-size: 1.5rem;
     color: var(--font-color);
-    margin-top: 1rem;
+    margin: 1.5rem;
 }
 
 h2 {
@@ -187,6 +185,7 @@ footer {
     flex-direction: row;
     justify-content: center;
     gap: 0.5rem;
+    flex-wrap: wrap;
 }
 
 footer a {
@@ -219,6 +218,14 @@ details > p > a{
     text-underline-offset: 3px;
 }
 
+/* Media */
+
+@media (max-width: 800px) {
+    .card h2{
+        text-align: center;
+    }
+}
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;
@@ -246,9 +253,13 @@ details > p > a{
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 500px) {
     .card h2{
         text-align: center;
+    }
+
+    main{
+        padding: 1.5rem 0 0 0;
     }
 }
 
