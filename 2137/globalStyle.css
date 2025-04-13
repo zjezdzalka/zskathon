@@ -5,8 +5,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --background-blue: rgb(13, 22, 88);
+    --background-blue: rgb(10, 19, 82);
+    --background-blue-transparent: rgba(10, 18, 82, 0.418);
     --background-dark-blue: #040b3d;
+    --background-dark-blue-transparent: #040b3dee;
     --white-half-transparent: #f8f8fc7c;
     --white: #F8F8FC;
     --font-color: #E3B61E;
@@ -32,8 +34,16 @@ body {
     line-height: 1.5;
     width: 100%;
     font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+main{
+    background-color: var(--background-dark-blue-transparent);
+    min-height: 100vh;
+    padding: 1.5rem 2rem 0 2rem;
+}
 
 header, section, footer {
     max-width: 1000px;
@@ -44,6 +54,11 @@ header, section, footer {
 header {
     text-align: center;
     user-select: none;
+    padding-top: 0;
+}
+
+footer{
+    padding-bottom: 0;
 }
 
 header h1 {
@@ -120,7 +135,7 @@ h2 {
 }
 
 .card {
-    background: var(--background-dark-blue);
+    background: var(--background-blue-transparent);
     border-radius: 10px;
     padding: 1.5rem;
     margin-bottom: 2rem;
@@ -146,6 +161,7 @@ ul {
     margin-top: 1rem;
     padding: 15px;
     display: inline-block;
+    user-select: none;
 }
 
 .partners {
@@ -168,10 +184,15 @@ footer {
     font-size: 0.9rem;
     color: #aaa;
     padding: 1rem;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
-footer > a {
-    color: #aaa;
+footer a {
+    color: var(--font-color);
     text-decoration: none;
 }
 
@@ -186,10 +207,18 @@ details {
 summary {
     font-weight: bold;
     color: var(--font-color);
+    user-select: none;
 }
 
 details > p{
     margin-top: 0.5rem;
+    cursor:text;
+}
+
+details > p > a{
+    color: var(--font-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 @media (max-width: 768px) {
