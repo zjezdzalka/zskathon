@@ -226,11 +226,12 @@
         window.addEventListener("resize", createStars);
     </script>
     <script>
+        /* dobrze szukasz (: */
         document.addEventListener("keydown", function(event) {
             let sequence = [];
-            const targetSequence = ["m", "i", "n", "e", "c", "r", "a", "f", "t"];
+            const targetSequence = [13, 9, 14, 5, 3, 18, 1, 6, 20];
             document.addEventListener("keydown", function(event) {
-                sequence.push(event.key.toLowerCase());
+                sequence.push(event.key.toLowerCase().charCodeAt(0)-"a".charCodeAt(0)+1);
                 if (sequence.length > targetSequence.length) {
                     sequence.shift();
                 }
