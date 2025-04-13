@@ -198,7 +198,7 @@ details {
     background: #2a2a45;
     padding: 1rem;
     border-radius: 8px;
-    cursor: pointer;
+    cursor: url('sword.webp'), pointer;
 }
 
 summary {
