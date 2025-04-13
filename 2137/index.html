@@ -225,5 +225,26 @@
         createStars();
         window.addEventListener("resize", createStars);
     </script>
+    <script>
+        document.addEventListener("keydown", function(event) {
+            let sequence = [];
+            const targetSequence = ["m", "i", "n", "e", "c", "r", "a", "f", "t"];
+            document.addEventListener("keydown", function(event) {
+                sequence.push(event.key.toLowerCase());
+                if (sequence.length > targetSequence.length) {
+                    sequence.shift();
+                }
+
+                if (sequence.join("") === targetSequence.join("")) {
+                    console.log("Konami Code activated!");
+                    document.querySelectorAll("details").forEach((details) => {
+                        details.style.cursor = "url('cursor.webp'), pointer";
+                    });
+                }
+            });
+        });
+
+
+    </script>
 </body>
 </html>
