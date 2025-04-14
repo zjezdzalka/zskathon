@@ -80,9 +80,9 @@
             <footer>
                 <p>&copy; Made with &hearts; by&nbsp;<a href="https://www.zsk.poznan.pl" target="_blank">ZSK_Poznań</a>&nbsp;2025</p>
                 <p> | </p>
-                <p><a href="">Regulamin</a></p>
+                <p><a href="https://shorturl.at/Gv2h3" target="_blank">Regulamin</a></p>
                 <p> | </p>
-                <p><a href="">Zgoda na udział</a></p>
+                <p><a href="" target="_blank">Zgoda na udział</a></p>
             </footer>
         </main>
 
@@ -226,19 +226,20 @@
         window.addEventListener("resize", createStars);
     </script>
     <script>
+        /* dobrze szukasz (: */
         document.addEventListener("keydown", function(event) {
             let sequence = [];
-            const targetSequence = ["m", "i", "n", "e", "c", "r", "a", "f", "t"];
+            const targetSequence = [13, 9, 14, 5, 3, 18, 1, 6, 20];
             document.addEventListener("keydown", function(event) {
-                sequence.push(event.key.toLowerCase());
+                sequence.push(event.key.toLowerCase().charCodeAt(0)-"a".charCodeAt(0)+1);
                 if (sequence.length > targetSequence.length) {
                     sequence.shift();
                 }
 
                 if (sequence.join("") === targetSequence.join("")) {
-                    console.log("Konami Code activated!");
+                    console.log("↑↑↓↓←→←→BA START!");
                     document.querySelectorAll("details").forEach((details) => {
-                        details.style.cursor = "url('cursor.webp'), pointer";
+                        details.style.cursor = "url('../cursor.webp'), pointer";
                     });
                 }
             });
