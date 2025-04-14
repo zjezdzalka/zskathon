@@ -37,7 +37,7 @@
                 <li><strong>24 maja, 11:00-21:00</strong> – Praca nad projektami</li>
                 <li><strong>24 maja, 21:00</strong> – Czas na integrację, gry i jedzonko</li>
                 <li><strong>25 maja, 22:00-11:00</strong> – Ostatnie poprawki i prezentacje</li>
-                <li><strong>25 maja, 12:00</strong> – Ogłoszenie zwycięzców i zakończenie</li>
+                <li><strong>25 maja, 13:30 +- 45min</strong> – Ogłoszenie zwycięzców i zakończenie</li>
                 </ul>
             </section>
 
@@ -79,9 +79,9 @@
 
             <footer>
                 <p>&copy; Made with &hearts; by&nbsp;<a href="https://www.zsk.poznan.pl" target="_blank">ZSK_Poznań</a>&nbsp;2025</p>
-                <p> | </p>
+                <p>|</p>
                 <p><a href="https://shorturl.at/Gv2h3" target="_blank">Regulamin</a></p>
-                <p> | </p>
+                <p>|</p>
                 <p><a href="" target="_blank">Zgoda na udział</a></p>
             </footer>
         </main>
@@ -98,6 +98,7 @@
     </script>
 
     <script>
+        /* timer */
         const countdownStart = new Date('2025-04-01T00:00:00').getTime();
         const eventStart = new Date('2025-05-24T10:00:00').getTime();
         const eventEnd = new Date('2025-05-25T23:59:59').getTime();
@@ -147,6 +148,7 @@
         setInterval(updateCountdown, 1000);
     </script>
     <script>
+        /* open one details at a time */
         let allDetails = document.querySelectorAll("details");
         allDetails.forEach((details) => {
             details.addEventListener("click", () => {
@@ -159,6 +161,7 @@
         });
     </script>
     <script>
+        /* pixels falling effect */
         const starCount = 75;
         const starColor = "rgba(255, 255, 255, 0.5)";
         const starContainer = document.createElement("div");
