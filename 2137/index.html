@@ -41,57 +41,16 @@
 
             <section class="card">
                 <h2>Harmonogram</h2>
-                <div class="timeline">
-                  <div class="timeline-item">
-                    <div class="timeline-content">
-                      <div class="date">24 maja, 09:00</div>
-                      <p>Rozpoczęcie rejestracji</p>
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-content">
-                      <div class="date">24 maja, 11:00</div>
-                      <p>Koniec rejestracji i ogłoszenie tematu</p>
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-content">
-                      <div class="date">24 maja, 11:10-21:00</div>
-                      <p>Praca nad projektami</p>
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-content">
-                      <div class="date">24 maja, 21:00</div>
-                      <p>Czas na integrację, gry i jedzonko</p>
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-content">
-                      <div class="date">25 maja, 22:00-11:00</div>
-                      <p>Ostatnie poprawki i prezentacje</p>
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-content">
-                      <div class="date">25 maja, 13:00</div>
-                      <p>Ogłoszenie trzech najlepszych projektów</p>
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-content">
-                      <div class="date">25 maja, 13:30-14:45</div>
-                      <p>Prezentacje i pitch'e top 3 zespołów</p>
-                    </div>
-                  </div>
-                  <div class="timeline-item">
-                    <div class="timeline-content">
-                      <div class="date">25 maja, 15:00</div>
-                      <p>Ogłoszenie zwyciężcy ZSKathon'u</p>
-                    </div>
-                  </div>
-                </div>
-            </section>
+                <li><strong>24 maja, 09:00</strong> – Rozpoczęcie rejestracji</li>
+                <li><strong>24 maja, 11:00</strong> – Koniec rejestracji i ogłoszenie tematu</li>
+                <li><strong>24 maja, 11:10-21:00</strong> – Praca nad projektami</li>
+                <li><strong>24 maja, 21:00</strong> – Czas na integrację, gry i jedzonko</li>
+                <li><strong>25 maja, 22:00-11:00</strong> – Ostatnie poprawki i prezentacje</li>
+                <li><strong>25 maja, 13:00</strong> – Ogłoszenie trzech najlepszych projektów</li>
+                <li><strong>25 maja, 13:30-14:45</strong> – Prezentacje i pitch'e top 3 zespołów</li>
+                <li><strong>25 maja, 15:00</strong> – Ogłoszenie zwyciężcy ZSKathon'u</li>
+                </ul>
+              </section>
 
             <section class="card">
                 <h2>FAQ</h2>
@@ -220,6 +179,7 @@
                 });
             });
         });
+
     </script>
     <script>
         /* pixels falling effect */
@@ -302,8 +262,13 @@
 
                 if (sequence.join("") === targetSequence.join("")) {
                     console.log("↑↑↓↓←→←→BA START!");
-                    document.querySelectorAll("details").forEach((details) => {
-                        details.style.cursor = "url('../cursor.webp'), pointer";
+                    document.querySelectorAll("summary").forEach((summary) => {
+                        summary.addEventListener("mouseover", () => {
+                            summary.style.cursor = "url('../cursor.webp'), pointer";
+                        });
+                        summary.addEventListener("mouseout", () => {
+                            summary.style.cursor = "default";
+                        }); 
                     });
                 }
             });
