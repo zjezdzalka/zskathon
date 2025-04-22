@@ -7,7 +7,7 @@
     --background-blue: rgb(10, 19, 82);
     --background-blue-transparent: rgba(10, 18, 82, 0.418);
     --background-dark-blue: #040b3d;
-    --background-dark-blue-transparent: #040b3dee;
+    --background-dark-blue-transparent: #050a38e1;
     --white-half-transparent: #f8f8fc7c;
     --white: #F8F8FC;
     --font-color: #DEF249;
@@ -102,6 +102,7 @@ header h1 img {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: 400;
 }
 
 #progress-bar:hover{
@@ -109,15 +110,16 @@ header h1 img {
     color: var(--white);
 }
 
-#countdown {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-#event-date {
+#event-date, #ctdwn {
     font-size: 1.5rem;
     color: var(--font-color);
+    font-weight: 500;
+}
+
+#ctdwn-con{
     margin: 1.5rem;
+    display: flex;
+    justify-content: center;
 }
 
 h2 {
@@ -198,6 +200,9 @@ details {
     background: #2a2a45;
     padding: 1rem;
     border-radius: 8px;
+}
+
+summary:hover{
     cursor: url('../sword.webp'), pointer;
 }
 
@@ -217,6 +222,68 @@ details > p > a{
     text-decoration: underline;
     text-underline-offset: 3px;
 }
+
+/*.timeline{
+    padding-left: 5rem;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+    height: 120px;
+}
+
+.tml-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.tml-left > .line {
+    width: 2px;
+    height: 50px;
+    background: var(--font-color);
+}
+
+.tml-left > .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--font-color);
+}
+
+.tml-content {
+    background: var(--background-dark-blue-transparent);
+    padding: 1rem;
+    margin: 0 0 0 10px;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100px;
+    justify-content: center;
+}
+
+.tml-content strong {
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+.tml-content p {
+    background: var(--background-dark-blue-transparent);
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+*/
 
 /* Media */
 
@@ -258,6 +325,11 @@ details > p > a{
         text-align: center;
     }
 
+    #ctdwn-con{
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
     main{
         padding: 1.5rem 0 0 0;
     }
@@ -281,3 +353,4 @@ details > p > a{
         font-size: 1.25rem;
     }
 }
+
