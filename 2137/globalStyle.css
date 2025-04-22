@@ -223,6 +223,68 @@ details > p > a{
     text-underline-offset: 3px;
 }
 
+/*.timeline{
+    padding-left: 5rem;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    position: relative;
+    height: 120px;
+}
+
+.tml-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.tml-left > .line {
+    width: 2px;
+    height: 50px;
+    background: var(--font-color);
+}
+
+.tml-left > .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--font-color);
+}
+
+.tml-content {
+    background: var(--background-dark-blue-transparent);
+    padding: 1rem;
+    margin: 0 0 0 10px;
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 100px;
+    justify-content: center;
+}
+
+.tml-content strong {
+    color: var(--font-color);
+    font-weight: bold;
+}
+
+.tml-content p {
+    background: var(--background-dark-blue-transparent);
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+*/
+
 /* Media */
 
 @media (max-width: 800px) {
