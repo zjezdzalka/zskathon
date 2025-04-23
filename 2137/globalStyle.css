@@ -223,16 +223,25 @@ details > p > a{
     text-underline-offset: 3px;
 }
 
-/*.timeline{
-    padding-left: 5rem;
+.timeline{
+    /* MEOW */
+    font-size: 100%;
 }
 
 .timeline-item {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
     position: relative;
+    height: 140px;
+}
+
+.timeline-item:first-child{
+    align-items: flex-start;
     height: 120px;
+}
+
+.timeline-item:first-child .tml-left > .line:first-child {
+    height: 35px;
 }
 
 .tml-left {
@@ -240,19 +249,21 @@ details > p > a{
     flex-direction: column;
     align-items: center;
     height: 100%;
+    width: 10%;
+    user-select: none;
 }
 
 .tml-left > .line {
-    width: 2px;
-    height: 50px;
+    width: 3px;
+    height: 55px;
     background: var(--font-color);
 }
 
 .tml-left > .circle {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    border: 2px solid var(--font-color);
+    border: 3px solid var(--font-color);
 }
 
 .tml-content {
@@ -268,6 +279,8 @@ details > p > a{
     gap: 0.5rem;
     height: 100px;
     justify-content: center;
+    width: 90%;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .tml-content strong {
@@ -283,7 +296,6 @@ details > p > a{
     font-weight: 300;
 }
 
-*/
 
 /* Media */
 
@@ -354,3 +366,10 @@ details > p > a{
     }
 }
 
+.current { background-color: var(--font-color); animation: blink 2s ease infinite; transition: background-color 0.5s ease; }
+@keyframes blink {
+    0% { background-color: var(--font-color); }
+    50% { background-color: #def24900; }
+    100% { background-color: var(--font-color); }
+}
+.filled { background-color : var(--font-color); transition: background-color 0.5s ease; }
