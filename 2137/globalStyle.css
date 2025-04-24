@@ -232,12 +232,12 @@ details > p > a{
     display: flex;
     align-items: center;
     position: relative;
-    height: 140px;
+    height: 130px;
 }
 
 .timeline-item:first-child{
     align-items: flex-start;
-    height: 120px;
+    height: 110px;
 }
 
 .timeline-item:first-child .tml-left > .line:first-child {
@@ -260,7 +260,7 @@ details > p > a{
 
 .tml-left > .line {
     width: 3px;
-    height: 55px;
+    height: 50px;
     background: var(--font-color);
 }
 
@@ -285,7 +285,7 @@ details > p > a{
     height: 100px;
     justify-content: center;
     width: 90%;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    /*box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);*/
 }
 
 .tml-content strong {
