@@ -244,6 +244,10 @@ details > p > a{
     height: 35px;
 }
 
+.timeline-item:first-child .tml-left{
+    justify-content: flex-end;
+}
+
 .tml-left {
     display: flex;
     flex-direction: column;
@@ -252,6 +256,7 @@ details > p > a{
     width: 10%;
     user-select: none;
 }
+
 
 .tml-left > .line {
     width: 3px;
