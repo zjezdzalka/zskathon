@@ -15,10 +15,10 @@
 
 @font-face {
     font-family: 'CubicFive10';
-    src:url('../CubicFive10.ttf.woff') format('woff'),
-        url('../CubicFive10.ttf.svg#CubicFive10') format('svg'),
-        url('../CubicFive10.ttf.eot'),
-        url('../CubicFive10.ttf.eot?#iefix') format('embedded-opentype'); 
+    src:url('CubicFive10.ttf.woff') format('woff'),
+        url('CubicFive10.ttf.svg#CubicFive10') format('svg'),
+        url('CubicFive10.ttf.eot'),
+        url('CubicFive10.ttf.eot?#iefix') format('embedded-opentype'); 
     font-weight: normal;
     font-style: normal;
 }
@@ -203,7 +203,7 @@ details {
 }
 
 summary:hover{
-    cursor: url('../sword.webp'), pointer;
+    cursor: url('sword.webp'), pointer;
 }
 
 summary {
