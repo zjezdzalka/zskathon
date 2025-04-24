@@ -39,12 +39,11 @@
                 <a href="https://forms.office.com/e/yuftKGzWRK" class="btn" target="_blank">FORMULARZ</a>
             </section>
 
-           <!-- <section class="card">
+           <section class="card">
                 <h2>Harmonogram</h2>
                 <div class="timeline">
                     <div class="timeline-item">
                         <div class="tml-left">
-                            <div class="line"></div>
                             <div class="circle"></div>
                             <div class="line"></div>
                         </div>
@@ -116,7 +115,6 @@
                         <div class="tml-left">
                             <div class="line"></div>
                             <div class="circle"></div>
-                            <div class="line"></div>
                         </div>
                         <div class="tml-content">
                             <strong>25 maja, 15:00</strong> Ogłoszenie zwyciężcy ZSKathon'u
@@ -125,9 +123,7 @@
                 </div>
             </section>
 
-            -->
-
-            <section class="card">
+            <!--<section class="card">
                 <h2>Harmonogram</h2>
                 <ul>
                     <li><strong>24 maja, 09:00</strong> – Rozpoczęcie rejestracji</li>
@@ -139,7 +135,7 @@
                     <li><strong>25 maja, 13:30-14:45</strong> – Prezentacje i pitch'e top 3 zespołów</li>
                     <li><strong>25 maja, 15:00</strong> – Ogłoszenie zwyciężcy ZSKathon'u</li>
                 </ul>
-            </section>
+            </section>-->
             
             <section class="card">
                 <h2>FAQ</h2>
@@ -255,6 +251,46 @@
 
         updateCountdown();
         setInterval(updateCountdown, 1000);
+    </script>
+    <script>
+        /* timeline dot filler */
+        const eventTimes = [
+            { time: "2025-05-24T09:00:00", title: "Rozpoczęcie rejestracji", timeDelay: "20"},
+            { time: "2025-05-24T11:00:00", title: "Koniec rejestracji i ogłoszenie tematu", timeDelay: "10"},
+            { time: "2025-05-24T11:10:00", title: "Praca nad projektami", timeDelay: "590" },
+            { time: "2025-05-24T21:00:00", title: "Czas na integrację, gry i jedzonko", timeDelay: "60" },
+            { time: "2025-05-25T22:00:00", title: "Ostatnie poprawki i prezentacje", timeDelay: "900" },
+            { time: "2025-05-25T13:00:00", title: "Ogłoszenie trzech najlepszych projektów", timeDelay: "20" },
+            { time: "2025-05-25T13:30:00", title: "Prezentacje i pitch'e top 3 zespołów", timeDelay: "75" },
+            { time: "2025-05-25T15:00:00", title: "Ogłoszenie zwyciężcy ZSKathon'u", timeDelay: "20" }
+        ]
+
+        const timelineItems = document.querySelectorAll(".timeline-item");
+        
+        function updateTimeline() {
+            const now = new Date().getTime();
+
+            eventTimes.forEach((event, index) => {
+                const eventTime = new Date(event.time).getTime();
+                const eventTimeM15 = eventTime - 15 * 60 * 1000; // 15 minutes before the event time
+                const eventTimeAfter = eventTime + event.timeDelay * 60 * 1000; // 2 hours after the event time
+                const timelineItem = timelineItems[index];
+                const circle = timelineItem.querySelector(".circle");
+
+                if (now >= eventTimeAfter) {
+                    circle.classList.add("filled");
+                    circle.classList.remove("current");
+                } else if (now >= eventTimeM15) {
+                    circle.classList.add("current");
+                    circle.classList.remove("filled");
+                } else {
+                    circle.classList.remove("filled", "current");
+                }
+            });
+        }
+
+        updateTimeline();
+        setInterval(updateTimeline, 60_000); // Update every minute
     </script>
     <script>
         /* open one details at a time */
