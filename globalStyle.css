@@ -332,6 +332,7 @@ details > p > a{
         padding: 0.75rem;
         display: flex;
         justify-content: center;
+        margin-top: 25px;
     }
 
     .partner-logo {

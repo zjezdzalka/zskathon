@@ -301,6 +301,13 @@ details > p > a{
     font-weight: 300;
 }
 
+.current { background-color: var(--font-color); animation: blink 2s ease infinite; transition: background-color 0.5s ease; }
+@keyframes blink {
+    0% { background-color: var(--font-color); }
+    50% { background-color: #def24900; }
+    100% { background-color: var(--font-color); }
+}
+.filled { background-color : var(--font-color); transition: background-color 0.5s ease; }
 
 /* Media */
 
@@ -325,6 +332,7 @@ details > p > a{
         padding: 0.75rem;
         display: flex;
         justify-content: center;
+        margin-top: 25px;
     }
 
     .partner-logo {
@@ -371,10 +379,3 @@ details > p > a{
     }
 }
 
-.current { background-color: var(--font-color); animation: blink 2s ease infinite; transition: background-color 0.5s ease; }
-@keyframes blink {
-    0% { background-color: var(--font-color); }
-    50% { background-color: #def24900; }
-    100% { background-color: var(--font-color); }
-}
-.filled { background-color : var(--font-color); transition: background-color 0.5s ease; }
