@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pl">
     <head>
-        <title>ZSKathon25'</title>
+        <title>ZSKathon25</title>
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +18,7 @@
     <body>
         <main>
             <header>
-                <h1><img src="logo_white.svg"/><p>&nbsp;2025</p></h1>
+                <h1><img src="logo_white.svg"/><p>2025</p></h1>
                 <div id="ctdwn-con">
                     <p id="event-date">24–25 maja&nbsp;</p>
                     <p id="ctdwn"></p>
@@ -157,11 +157,11 @@
                 </details>
                 <details>
                     <summary>Czy wydarzenie trwa całą noc?</summary>
-                    <p>Tak, ale będą dostępne strefy odpoczynku i relaksu. Pamiętaj, że całą noc nie trzeba pracować, a tempo pracy narzucacie sobie sami!</p>
+                    <p>Tak, ale będą dostępne strefy odpoczynku i relaksu. Pamiętaj, że nie trzeba pracować przez całą noc, a tempo pracy wyznaczacie sobie sami!</p>
                 </details>
                 <details>
                     <summary>Czy potrzebuję zgody rodziców?</summary>
-                    <p>Każdy uczestnik jest zobowiązany do wypełnienia zgody. W przypadku uczestnika niepełnoletniego zgodę wypełnia jego opiekun prawny. <a href="https://shorturl.at/fqJ2T" target="_blank" rel="noopener noreferrer">Link do zgody.</a></p>
+                    <p>Każdy uczestnik jest zobowiązany do wypełnienia zgody. W przypadku uczestnika niepełnoletniego, zgodę wypełnia jego opiekun prawny. <a href="https://shorturl.at/fqJ2T" target="_blank" rel="noopener noreferrer">Link do zgody.</a></p>
                 </details>
             </section>
             
@@ -181,229 +181,247 @@
                 <p><a href="https://shorturl.at/Gv2h3" target="_blank">Regulamin</a></p>
                 <p>|</p>
                 <p><a href="https://shorturl.at/fqJ2T" target="_blank">Zgoda na udział</a></p>
+                <p>|</p>
+                <p><a href="mailto:zskathon@gmail.com" target="_blank">Kontakt</a></p>
             </footer>
         </main>
 
+        <!-- googl -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WHQGPXYFT"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WHQGPXYFT"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+            gtag('config', 'G-4WHQGPXYFT');
+            // zgadza się, liczymy ile osób tu zajrzało na stronkę ;)
+        </script>
 
-        gtag('config', 'G-4WHQGPXYFT');
-        // zgadza się, liczymy ile osób tu zajrzało na stronkę ;)
-    </script>
+        <!-- /* timer */ -->
+        <script>
+            const countdownStart = new Date('2025-04-01T00:00:00').getTime();
+            const eventStart = new Date('2025-05-24T09:00:00').getTime();
+            // const eventStart = new Date('2025-04-24T09:00:00').getTime();
+            const eventEnd = new Date('2025-05-25T23:59:59').getTime();
+            // const eventEnd = new Date('2025-04-25T23:59:59').getTime();
+            const totalCountdownDuration = eventStart - countdownStart;
 
-    <script>
-        /* timer */
-        const countdownStart = new Date('2025-04-01T00:00:00').getTime();
-        const eventStart = new Date('2025-05-24T10:00:00').getTime();
-        const eventEnd = new Date('2025-05-25T23:59:59').getTime();
-        const totalCountdownDuration = eventStart - countdownStart;
+            function updateCountdown() {
+                const now = new Date().getTime();
+                let distance, progress, statusText;
 
-        function updateCountdown() {
-            const now = new Date().getTime();
-            let distance, progress, statusText;
+                if (now < eventStart) {
+                    distance = eventStart - now;
+                    const elapsed = now - countdownStart;
+                    progress = Math.min((elapsed / totalCountdownDuration) * 100, 100);
 
-            if (now < eventStart) {
-                distance = eventStart - now;
-                const elapsed = now - countdownStart;
-                progress = Math.min((elapsed / totalCountdownDuration) * 100, 100);
-                /*if max-width: 500px*/
-                if (window.innerWidth <= 500) {
-                    statusText = `${formatTime(distance)}`;
-                } 
+                    if (window.innerWidth <= 600) {
+                        document.getElementById("event-date").innerHTML = "24–25 maja";
+                        statusText = `${formatTime(distance)}`;
+                    } 
+                    else {
+                        document.getElementById("event-date").innerHTML = "24–25 maja&nbsp;";
+                        statusText = ` | ${formatTime(distance)}`;
+                    }
+                }
+                else if (now <= eventEnd) {
+                    progress = 100;
+                    if (window.innerWidth <= 600) {
+                        document.getElementById("event-date").innerHTML = "24–25 maja";
+                        statusText = "in progress...";
+                    }
+                    else {
+                        document.getElementById("event-date").innerHTML = "24–25 maja&nbsp;";
+                        statusText = " | in progress...";
+                    }
+                }
                 else {
-                    statusText = ` | ${formatTime(distance)}`;
+                    progress = 100;
+                    document.getElementById("event-date").textContent = "";
+                    if (window.innerWidth <= 600) {
+                        statusText = "see you next edition! ⌨️";
+                    }
+                    else {
+                        statusText = "see you next edition! ⌨️";
+                    }
                 }
-            }
-            else if (now <= eventEnd) {
-                progress = 100;
-                if (window.innerWidth <= 500) {
-                    statusText = "in progress...";
+
+                document.getElementById("ctdwn").textContent = statusText;
+                document.getElementById("progress-bar").style.width = `${progress}%`;
+                
+                const progressBarContainer = document.getElementById("progress-bar-container");
+                if (now >= eventStart) {
+                    progressBarContainer.style.display = "none";
                 }
-                else {
-                    statusText = " | in progress...";
-                }
-            }
-            else {
-                progress = 100;
-                statusText = "see you next edition! ⌨️";
+
+                const progressBar = document.getElementById("progress-bar");
+
+                progressBar.innerText = `${progress.toFixed(0)}%`;
             }
 
-            document.getElementById("ctdwn").textContent = statusText;
-            document.getElementById("progress-bar").style.width = `${progress}%`;
+            function formatTime(ms) {
+                const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+                return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        </script>
+
+        <!-- /* timeline dot filler */ -->
+        <script>
+            const eventTimes = [
+                { time: "2025-05-24T09:00:00", title: "Rozpoczęcie rejestracji", timeDelay: "20"},
+                { time: "2025-05-24T11:00:00", title: "Koniec rejestracji i ogłoszenie tematu", timeDelay: "10"},
+                { time: "2025-05-24T11:10:00", title: "Praca nad projektami", timeDelay: "590" },
+                { time: "2025-05-24T21:00:00", title: "Czas na integrację, gry i jedzonko", timeDelay: "60" },
+                { time: "2025-05-25T22:00:00", title: "Ostatnie poprawki i prezentacje", timeDelay: "900" },
+                { time: "2025-05-25T13:00:00", title: "Ogłoszenie trzech najlepszych projektów", timeDelay: "20" },
+                { time: "2025-05-25T13:30:00", title: "Prezentacje i pitch'e top 3 zespołów", timeDelay: "75" },
+                { time: "2025-05-25T15:00:00", title: "Ogłoszenie zwyciężcy ZSKathon'u", timeDelay: "20" }
+            ]
+
+            const timelineItems = document.querySelectorAll(".timeline-item");
             
-            const progressBarContainer = document.getElementById("progress-bar-container");
-            if (now >= eventStart) {
-                progressBarContainer.style.display = "none";
+            function updateTimeline() {
+                const now = new Date().getTime();
+
+                eventTimes.forEach((event, index) => {
+                    const eventTime = new Date(event.time).getTime();
+                    const eventTimeM15 = eventTime - 15 * 60 * 1000; // 15 minutes before the event time
+                    const eventTimeAfter = eventTime + event.timeDelay * 60 * 1000; // 2 hours after the event time
+                    const timelineItem = timelineItems[index];
+                    const circle = timelineItem.querySelector(".circle");
+
+                    if (now >= eventTimeAfter) {
+                        circle.classList.add("filled");
+                        circle.classList.remove("current");
+                    } else if (now >= eventTimeM15) {
+                        circle.classList.add("current");
+                        circle.classList.remove("filled");
+                    } else {
+                        circle.classList.remove("filled", "current");
+                    }
+                });
             }
 
-            const progressBar = document.getElementById("progress-bar");
+            updateTimeline();
+            setInterval(updateTimeline, 60_000); // Update every minute
+        </script>
 
-            progressBar.innerText = `${progress.toFixed(0)}%`;
-        }
-
-        function formatTime(ms) {
-            const days = Math.floor(ms / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((ms % (1000 * 60)) / 1000);
-            return `${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-    </script>
-    <script>
-        /* timeline dot filler */
-        const eventTimes = [
-            { time: "2025-05-24T09:00:00", title: "Rozpoczęcie rejestracji", timeDelay: "20"},
-            { time: "2025-05-24T11:00:00", title: "Koniec rejestracji i ogłoszenie tematu", timeDelay: "10"},
-            { time: "2025-05-24T11:10:00", title: "Praca nad projektami", timeDelay: "590" },
-            { time: "2025-05-24T21:00:00", title: "Czas na integrację, gry i jedzonko", timeDelay: "60" },
-            { time: "2025-05-25T22:00:00", title: "Ostatnie poprawki i prezentacje", timeDelay: "900" },
-            { time: "2025-05-25T13:00:00", title: "Ogłoszenie trzech najlepszych projektów", timeDelay: "20" },
-            { time: "2025-05-25T13:30:00", title: "Prezentacje i pitch'e top 3 zespołów", timeDelay: "75" },
-            { time: "2025-05-25T15:00:00", title: "Ogłoszenie zwyciężcy ZSKathon'u", timeDelay: "20" }
-        ]
-
-        const timelineItems = document.querySelectorAll(".timeline-item");
-        
-        function updateTimeline() {
-            const now = new Date().getTime();
-
-            eventTimes.forEach((event, index) => {
-                const eventTime = new Date(event.time).getTime();
-                const eventTimeM15 = eventTime - 15 * 60 * 1000; // 15 minutes before the event time
-                const eventTimeAfter = eventTime + event.timeDelay * 60 * 1000; // 2 hours after the event time
-                const timelineItem = timelineItems[index];
-                const circle = timelineItem.querySelector(".circle");
-
-                if (now >= eventTimeAfter) {
-                    circle.classList.add("filled");
-                    circle.classList.remove("current");
-                } else if (now >= eventTimeM15) {
-                    circle.classList.add("current");
-                    circle.classList.remove("filled");
-                } else {
-                    circle.classList.remove("filled", "current");
-                }
+        <!-- /* open one details at a time */ -->
+        <script>
+            let allDetails = document.querySelectorAll("details");
+            allDetails.forEach((details) => {
+                details.addEventListener("click", () => {
+                    allDetails.forEach((otherDetails) => {
+                        if (otherDetails !== details) {
+                            otherDetails.removeAttribute("open");
+                        }
+                    });
+                });
             });
-        }
 
-        updateTimeline();
-        setInterval(updateTimeline, 60_000); // Update every minute
-    </script>
-    <script>
-        /* open one details at a time */
-        let allDetails = document.querySelectorAll("details");
-        allDetails.forEach((details) => {
-            details.addEventListener("click", () => {
-                allDetails.forEach((otherDetails) => {
-                    if (otherDetails !== details) {
-                        otherDetails.removeAttribute("open");
+        </script>
+
+        <!-- /* pixels falling effect */ -->
+        <script>
+            const starCount = 75;
+            const starColor = "rgba(255, 255, 255, 0.5)";
+            const starContainer = document.createElement("div");
+
+            starContainer.style.position = "fixed";
+            starContainer.style.top = "0";
+            starContainer.style.left = "0";
+            starContainer.style.width = "100%";
+            starContainer.style.height = "100%";
+            starContainer.style.pointerEvents = "none";
+            starContainer.style.overflow = "hidden";
+            starContainer.style.zIndex = "-1";
+
+            document.body.appendChild(starContainer);
+
+            function getDocumentHeight() {
+                return Math.max(
+                    document.body.scrollHeight,
+                    document.documentElement.scrollHeight,
+                    document.body.offsetHeight,
+                    document.documentElement.offsetHeight,
+                    document.documentElement.clientHeight
+                );
+            }
+
+            function createStars() {
+                while (starContainer.firstChild) {
+                    starContainer.removeChild(starContainer.firstChild);
+                }
+                
+                const docHeight = getDocumentHeight();
+                
+                for (let i = 0; i < starCount; i++) {
+                    let starSize = Math.floor(Math.random() * 16) + 10; /* (10 - 25px) */
+            
+                    const star = document.createElement("div");
+                    star.style.position = "absolute";
+                    star.style.width = `${starSize}px`;
+                    star.style.height = `${starSize}px`;
+                    star.style.backgroundColor = starColor;
+                    star.style.opacity = Math.random() * 0.5 + 0.5;
+                    
+                    star.style.top = `-${starSize}px`;
+                    star.style.left = `${Math.random() * 100}vw`;
+                    
+                    starContainer.appendChild(star);
+
+                    // (6-12 sekund)
+                    const fallDuration = Math.random() * 6000 + 6000;
+                    
+                    const fallAnimation = star.animate([
+                        { transform: `translateY(0)` },
+                        { transform: `translateY(${docHeight + starSize}px)` }
+                    ], {
+                        duration: fallDuration,
+                        easing: "linear",
+                        iterations: Infinity
+                    });
+
+                    fallAnimation.startTime = Math.random() * 9000;
+                }
+            }
+
+            createStars();
+            window.addEventListener("resize", createStars);
+        </script>
+
+        <script>
+            /* dobrze szukasz (: */
+            document.addEventListener("keydown", function(event) {
+                let sequence = [];
+                const targetSequence = [13, 9, 14, 5, 3, 18, 1, 6, 20];
+                document.addEventListener("keydown", function(event) {
+                    sequence.push(event.key.toLowerCase().charCodeAt(0)-"a".charCodeAt(0)+1);
+                    if (sequence.length > targetSequence.length) {
+                        sequence.shift();
+                    }
+
+                    if (sequence.join("") === targetSequence.join("")) {
+                        console.log("↑↑↓↓←→←→BA START!");
+                        document.querySelectorAll("summary").forEach((summary) => {
+                            summary.addEventListener("mouseover", () => {
+                                summary.style.cursor = "url('cursor.webp'), pointer";
+                            });
+                            summary.addEventListener("mouseout", () => {
+                                summary.style.cursor = "default";
+                            }); 
+                        });
                     }
                 });
             });
-        });
-
-    </script>
-    <script>
-        /* pixels falling effect */
-        const starCount = 75;
-        const starColor = "rgba(255, 255, 255, 0.5)";
-        const starContainer = document.createElement("div");
-
-        starContainer.style.position = "fixed";
-        starContainer.style.top = "0";
-        starContainer.style.left = "0";
-        starContainer.style.width = "100%";
-        starContainer.style.height = "100%";
-        starContainer.style.pointerEvents = "none";
-        starContainer.style.overflow = "hidden";
-        starContainer.style.zIndex = "-1";
-
-        document.body.appendChild(starContainer);
-
-        function getDocumentHeight() {
-            return Math.max(
-                document.body.scrollHeight,
-                document.documentElement.scrollHeight,
-                document.body.offsetHeight,
-                document.documentElement.offsetHeight,
-                document.documentElement.clientHeight
-            );
-        }
-
-        function createStars() {
-            while (starContainer.firstChild) {
-                starContainer.removeChild(starContainer.firstChild);
-            }
-            
-            const docHeight = getDocumentHeight();
-            
-            for (let i = 0; i < starCount; i++) {
-                let starSize = Math.floor(Math.random() * 16) + 10; /* (10 - 25px) */
-        
-                const star = document.createElement("div");
-                star.style.position = "absolute";
-                star.style.width = `${starSize}px`;
-                star.style.height = `${starSize}px`;
-                star.style.backgroundColor = starColor;
-                star.style.opacity = Math.random() * 0.5 + 0.5;
-                
-                star.style.top = `-${starSize}px`;
-                star.style.left = `${Math.random() * 100}vw`;
-                
-                starContainer.appendChild(star);
-
-                // (6-12 sekund)
-                const fallDuration = Math.random() * 6000 + 6000;
-                
-                const fallAnimation = star.animate([
-                    { transform: `translateY(0)` },
-                    { transform: `translateY(${docHeight + starSize}px)` }
-                ], {
-                    duration: fallDuration,
-                    easing: "linear",
-                    iterations: Infinity
-                });
-
-                fallAnimation.startTime = Math.random() * 9000;
-            }
-        }
-
-        createStars();
-        window.addEventListener("resize", createStars);
-    </script>
-    <script>
-        /* dobrze szukasz (: */
-        document.addEventListener("keydown", function(event) {
-            let sequence = [];
-            const targetSequence = [13, 9, 14, 5, 3, 18, 1, 6, 20];
-            document.addEventListener("keydown", function(event) {
-                sequence.push(event.key.toLowerCase().charCodeAt(0)-"a".charCodeAt(0)+1);
-                if (sequence.length > targetSequence.length) {
-                    sequence.shift();
-                }
-
-                if (sequence.join("") === targetSequence.join("")) {
-                    console.log("↑↑↓↓←→←→BA START!");
-                    document.querySelectorAll("summary").forEach((summary) => {
-                        summary.addEventListener("mouseover", () => {
-                            summary.style.cursor = "url('cursor.webp'), pointer";
-                        });
-                        summary.addEventListener("mouseout", () => {
-                            summary.style.cursor = "default";
-                        }); 
-                    });
-                }
-            });
-        });
 
 
-    </script>
-</body>
+        </script>
+    </body>
 </html>
