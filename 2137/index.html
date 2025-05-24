@@ -412,12 +412,18 @@
             document.addEventListener("keydown", function(event) {
                 let sequence = [];
                 let additional = 10;
-                const targetSequence = [3, -1, 4, -5, -7, 8, -9, -4, 10];
+                let begin = 3;
+                const difference = [-4,5,-9,-2,15,-17,5,14];
+                const targetSequence = [begin];
+                for (let i = 0; i < difference.length; i++) {
+                    begin = begin + difference[i];
+                    targetSequence.push(begin);
+                }
+                
                 document.addEventListener("keydown", function(event) {
                     sequence.push(event.key.toLowerCase().charCodeAt(0)-"a".charCodeAt(0)+1-additional);
-                    if (sequence.length > targetSequence.length) {
-                        sequence.shift();
-                    }
+                    
+                    sequence.length > targetSequence.length ? sequence.shift() : null;
 
                     if (sequence.join("") === targetSequence.join("")) {
                         console.log("↑↑↓↓←→←→BA START!");
