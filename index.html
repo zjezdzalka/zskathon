@@ -163,7 +163,7 @@
                 </details>
                 <details>
                     <summary>Czym jest pitch?</summary>
-                    <p>Pitch to krótkie przemówienie, w którym w prosty sposób opowiadasz o swoim pomyśle. To szansa, aby pokazać jury dlaczego Twój projekt jest super! Maksymalny czas prezentacji to 20 minut. Pamiętaj, że to nie jest matura ustna z polskiego i NIE musisz przejmować się błędami!</p>
+                    <p>Pitch to krótkie przemówienie, w którym w prosty sposób opowiadasz o swoim pomyśle. To szansa, aby pokazać jury dlaczego Twój projekt jest super! Maksymalny czas prezentacji to 7 minut. Pamiętaj, że to nie jest matura ustna z polskiego i NIE musisz przejmować się błędami!</p>
                 </details>
                 <details>
                     <summary>Czy wydarzenie trwa całą noc?</summary>
@@ -285,11 +285,11 @@
         <script>
             const eventTimes = [
                 { time: "2025-05-24T09:00:00", title: "Rozpoczęcie rejestracji", timeDelay: "20"},
-                { time: "2025-05-24T11:00:00", title: "Koniec rejestracji", timeDelay: "10"},
+                { time: "2025-05-24T10:30:00", title: "Koniec rejestracji", timeDelay: "10"},
                 { time: "2025-05-24T11:00:00", title: "Ogłoszenie tematu", timeDelay: "10"},
                 { time: "2025-05-24T11:10:00", title: "Praca nad projektami", timeDelay: "590" },
                 { time: "2025-05-24T21:00:00", title: "Czas na integrację, gry i jedzonko", timeDelay: "60" },
-                { time: "2025-05-25T22:00:00", title: "Ostatnie poprawki i prezentacje", timeDelay: "900" },
+                { time: "2025-05-24T22:00:00", title: "Ostatnie poprawki i prezentacje", timeDelay: "900" },
                 { time: "2025-05-25T13:00:00", title: "Ogłoszenie trzech najlepszych projektów", timeDelay: "20" },
                 { time: "2025-05-25T13:30:00", title: "Prezentacje i pitch'e top 3 zespołów", timeDelay: "75" },
                 { time: "2025-05-25T15:00:00", title: "Ogłoszenie zwyciężcy ZSKathon'u", timeDelay: "20" }
@@ -310,7 +310,7 @@
                     if (now >= eventTimeAfter) {
                         circle.classList.add("filled");
                         circle.classList.remove("current");
-                    } else if (now >= eventTimeM15) {
+                    } else if (now >= eventTime) {
                         circle.classList.add("current");
                         circle.classList.remove("filled");
                     } else {
@@ -411,9 +411,10 @@
             /* dobrze szukasz (: */
             document.addEventListener("keydown", function(event) {
                 let sequence = [];
-                const targetSequence = [13, 9, 14, 5, 3, 18, 1, 6, 20];
+                let additional = 10;
+                const targetSequence = [3, -1, 4, -5, -7, 8, -9, -4, 10];
                 document.addEventListener("keydown", function(event) {
-                    sequence.push(event.key.toLowerCase().charCodeAt(0)-"a".charCodeAt(0)+1);
+                    sequence.push(event.key.toLowerCase().charCodeAt(0)-"a".charCodeAt(0)+1-additional);
                     if (sequence.length > targetSequence.length) {
                         sequence.shift();
                     }
