@@ -359,10 +359,6 @@ details > p > a{
         text-align: center;
     }
 
-    #ctdwn{
-        /*margin-top: 0.5rem;*/
-    }
-
     #ctdwn-con{
         flex-direction: column;
         gap: 0.5rem;

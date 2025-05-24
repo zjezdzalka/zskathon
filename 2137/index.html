@@ -411,9 +411,10 @@
             /* dobrze szukasz (: */
             document.addEventListener("keydown", function(event) {
                 let sequence = [];
-                const targetSequence = [13, 9, 14, 5, 3, 18, 1, 6, 20];
+                let additional = 10;
+                const targetSequence = [3, -1, 4, -5, -7, 8, -9, -4, 10];
                 document.addEventListener("keydown", function(event) {
-                    sequence.push(event.key.toLowerCase().charCodeAt(0)-"a".charCodeAt(0)+1);
+                    sequence.push(event.key.toLowerCase().charCodeAt(0)-"a".charCodeAt(0)+1-additional);
                     if (sequence.length > targetSequence.length) {
                         sequence.shift();
                     }
