@@ -305,6 +305,20 @@ details > p > a{
     font-weight: 300;
 }
 
+.first, .second, .third, .fourth{
+    display: flex;
+}
+
+.first{
+    font-size: 1.5em;
+}
+.second{
+    font-size: 1.3em;
+}
+.third{
+    font-size: 1.1em;
+}
+
 .current { background-color: var(--font-color); animation: blink 2s ease infinite; transition: background-color 0.5s ease; }
 @keyframes blink {
     0% { background-color: var(--font-color); }

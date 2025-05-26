@@ -28,6 +28,16 @@
                 </div>
             </header>
 
+            <section class="card leaderboard">
+                <h2>Wyniki</h2>
+                <div class="first"><p class="bold">🏆 1. </p>&nbsp;Wazzup Beijing</div>
+                <div class="second"><p class="bold">🥈 2. </p>&nbsp;Quintus</div>
+                <div class="third"><p class="bold">🥉 3. </p>&nbsp;Tim tfoih mażeń</div>
+                <div class="fourth"><p class="bold">🖥️ 4. </p>&nbsp;Młodzi dockerowscy</div>
+                <br>
+                <p class="dodinfo">Dziękujemy za udział i gratulujemy każdej drużynie na ZSKathonie! Mamy nadzieję, że podobał Wam się event. &hearts;</p>
+            </section>
+
             <section class="card">
                 <h2>O wydarzeniu</h2>
                 <p>ZSKathon to 24-godzinny hackathon, podczas którego uczniowie różnych kierunków technicznych współpracują nad innowacyjnymi projektami, odpowiadając na realne wyzwania społeczne, szczególnie z obszaru zrównoważonego rozwoju. To okazja do rozwijania kompetencji przyszłości, takich jak kreatywność, przedsiębiorczość, praca zespołowa i odpowiedzialność społeczna.</p>
@@ -409,37 +419,33 @@
 
         <script>
             /* dobrze szukasz (: */
+            let sequence = [];
+            let additional = 10;
+            let begin = 3;
+            const difference = [-4,5,-9,-2,15,-17,5,14];
+            const targetSequence = [begin];
+            for (let i = 0; i < difference.length; i++) {
+                begin = begin + difference[i];
+                targetSequence.push(begin);
+            }
+            
             document.addEventListener("keydown", function(event) {
-                let sequence = [];
-                let additional = 10;
-                let begin = 3;
-                const difference = [-4,5,-9,-2,15,-17,5,14];
-                const targetSequence = [begin];
-                for (let i = 0; i < difference.length; i++) {
-                    begin = begin + difference[i];
-                    targetSequence.push(begin);
-                }
+                sequence.push(event.key.toLowerCase().charCodeAt(0)-"a".charCodeAt(0)+1-additional);
                 
-                document.addEventListener("keydown", function(event) {
-                    sequence.push(event.key.toLowerCase().charCodeAt(0)-"a".charCodeAt(0)+1-additional);
-                    
-                    sequence.length > targetSequence.length ? sequence.shift() : null;
+                sequence.length > targetSequence.length ? sequence.shift() : null;
 
-                    if (sequence.join("") === targetSequence.join("")) {
-                        console.log("↑↑↓↓←→←→BA START!");
-                        document.querySelectorAll("summary").forEach((summary) => {
-                            summary.addEventListener("mouseover", () => {
-                                summary.style.cursor = "url('cursor.webp'), pointer";
-                            });
-                            summary.addEventListener("mouseout", () => {
-                                summary.style.cursor = "default";
-                            }); 
+                if (sequence.join("") === targetSequence.join("")) {
+                    console.log("↑↑↓↓←→←→BA START!");
+                    document.querySelectorAll("summary").forEach((summary) => {
+                        summary.addEventListener("mouseover", () => {
+                            summary.style.cursor = "url('cursor.webp'), pointer";
                         });
-                    }
-                });
+                        summary.addEventListener("mouseout", () => {
+                            summary.style.cursor = "default";
+                        }); 
+                    });
+                }
             });
-
-
         </script>
     </body>
 </html>
