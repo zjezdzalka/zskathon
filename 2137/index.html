@@ -5,7 +5,7 @@
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Zapisz się już teraz na pierwszy hackathon w historii ZSK! Do zobaczenia 24-25 maja!" />
+        <meta name="description" content="Zapisz się już wkrótce na drugą edycję hackathonu w historii ZSK! Do zobaczenia 23-24 maja 2026!" />
         <meta name="author" content="ZSKathon" />
         <meta http-equiv="refresh" content="1800" />
     
@@ -18,6 +18,7 @@
     <body>
         <main>
             <header>
+                <!-- align vertically because its fucking off by 1 pixel and it pisses me off -->
                 <h1><img src="logo_white.svg"/><p>2026</p></h1>
                 <div id="ctdwn-con">
                     <p id="event-date">23–24 maja&nbsp;</p>
@@ -27,6 +28,12 @@
                     <div id="progress-bar"></div>
                 </div>
             </header>
+
+            <!--
+            would add menu bar at top, and add a link to wyniki.html, faq.html, link do zapisów
+            -->
+
+            <!-- to make the documents on the site and not on the 1d if possible -->
 
             <!--<section class="card leaderboard">
                 <h2>Wyniki</h2>
@@ -38,9 +45,19 @@
                 <p class="dodinfo">Dziękujemy za udział i gratulujemy każdej drużynie na ZSKathonie! Mamy nadzieję, że podobał Wam się event. &hearts;</p>
             </section>-->
 
+            <!-- 
+            do zmiany wygląd kart i backgroundu
+            would make the site a bit more dark and add a bit more scrollability, but keep the effect of pixels 
+            -->
+
+            <!-- to add section during event that gives info of tips such as, make sure to drink water! and some other easter eggs -->
+
             <section class="card">
                 <h2>O wydarzeniu</h2>
-                <p>ZSKathon to 24-godzinny hackathon, podczas którego uczniowie różnych kierunków technicznych współpracują nad innowacyjnymi projektami, odpowiadając na realne wyzwania społeczne, szczególnie z obszaru zrównoważonego rozwoju. To okazja do rozwijania kompetencji przyszłości, takich jak kreatywność, przedsiębiorczość, praca zespołowa i odpowiedzialność społeczna.</p>
+                <!-- do skrócenia -->
+                <p>ZSKathon to 24-godzinne wydarzenie, podczas którego uczniowie różnych kierunków w ZSK opracowują rozwiązanie dla problemu podanego na początku wydarzenia. 
+                   Uczestnicy współpracują nad innowacyjnymi projektami i rozwiązaniami rozważając różne aspekty problemu. 
+                   To idealna okazja do rozwijania kompetencji swojej przyszłości, takich jak kreatywność, praca zespołowa i współpraca.</p>
             </section>
 
             <section class="card">
@@ -51,6 +68,7 @@
             </section>
 
            <section class="card">
+                <!--left right left right style, three columns (mid - are the dots), grid, and until >800px do not do standarised text right dots left-->
                 <h2>Harmonogram</h2>
                 <div class="timeline">
                     <!--do zautomatyzowania przez js, bo za dużo wklejania i wyliczania-->
@@ -61,6 +79,7 @@
                         </div>
                         <div class="tml-content">
                             <strong>23 maja, 09:00</strong> Rozpoczęcie rejestracji
+                            <i>Szkoła będzie zamknięta dla uczestników dopóki akredytacja się nie rozpocznie.</i>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -69,8 +88,9 @@
                             <div class="circle"></div>
                             <div class="line"></div>
                         </div>
-                        <div class="tml-content">wq
+                        <div class="tml-content">
                             <strong>23 maja, 10:30</strong> Koniec rejestracji
+                            <i>Zamknięcie szkoły dla osób z zewnątrz.</i>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -91,6 +111,7 @@
                         </div>
                         <div class="tml-content">
                             <strong>23 maja, 11:10-21:00</strong> Praca nad projektami
+                            <i>W między czasie pojawią się prezentacje :]</i>
                         </div>
                     </div>
                     <div class="timeline-item">
@@ -139,7 +160,7 @@
                             <div class="circle"></div>
                         </div>
                         <div class="tml-content">
-                            <strong>24 maja, 15:00</strong> Ogłoszenie zwyciężcy ZSKathon'u
+                            <strong>24 maja, 15:00</strong> Ogłoszenie zwycięskiej drużyny ZSKathon'u
                         </div>
                     </div>
                 </div>
@@ -170,12 +191,12 @@
                     <p>Nie musisz! Jeśli lubisz programować – super, na pewno Twój zespół się odnajdzie! Ale jeśli Twoją mocną stroną jest marketing, elektronika, design czy po prostu kreatywne pomysły – też jesteś mile widziany. Liczy się pasja i chęć tworzenia, nie tylko kod!</p>
                 </details>
                 <details>
-                    <summary>Czy mogę zgłosić się sam?</summary>
-                    <p>Preferujemy zespoły, ale pomożemy Ci znaleźć drużynę!</p>
-                </details>
-                <details>
                     <summary>Czym jest pitch?</summary>
                     <p>Pitch to krótkie przemówienie, w którym w prosty sposób opowiadasz o swoim pomyśle. To szansa, aby pokazać jury dlaczego Twój projekt jest super! Maksymalny czas prezentacji to 7 minut. Pamiętaj, że to nie jest matura ustna z polskiego i NIE musisz przejmować się błędami!</p>
+                </details>
+                <details>
+                    <summary>Jakie sale będą dostępne dla uczestników?</summary>
+                    <p>Dostęp do mapy wydarzenia jest dostępny tutaj: <a href="" target="_blank" rel="noopener noreferrer">Link do mapy.</a></p>
                 </details>
                 <details>
                     <summary>Czy wydarzenie trwa całą noc?</summary>
@@ -183,8 +204,17 @@
                 </details>
                 <details>
                     <summary>Czy potrzebuję zgody rodziców?</summary>
-                    <p>Każdy uczestnik jest zobowiązany do wypełnienia zgody. W przypadku uczestnika niepełnoletniego, zgodę wypełnia jego opiekun prawny. <a href="https://shorturl.at/Qh5oe" target="_blank" rel="noopener noreferrer">Link do zgody.</a></p>
+                    <p>Każdy uczestnik jest zobowiązany do wypełnienia zgody. W przypadku uczestnika niepełnoletniego, zgodę wypełnia jego opiekun prawny. <a href="" target="_blank" rel="noopener noreferrer">Link do zgody.</a></p>
                 </details>
+                <details>
+                    <summary>Czy dostanę certyfikat uczestnictwa?</summary>
+                    <p>Tak! Każdy uczestnik otrzyma certyfikat uczestnictwa w wydarzeniu.</p>
+                </details>
+                <details>
+                    <summary>Czy muszę przynieść własny sprzęt?</summary>
+                    <p>Zalecamy przyniesienie własnego laptopa lub innego sprzętu, który może być potrzebny do pracy nad projektem. Zapewniamy dostęp do Wi-Fi oraz podstawowe narzędzia i oprogramowanie.</p>
+                </details>
+
             </section>
             
             <section class="card">
@@ -296,6 +326,8 @@
 
         <!-- /* timeline dot filler */ -->
         <script>
+
+            /* compress to one generation and not static */
             const eventTimes = [
                 { time: "2026-05-23T09:00:00", title: "Rozpoczęcie rejestracji", timeDelay: "20"},
                 { time: "2026-05-23T10:30:00", title: "Koniec rejestracji", timeDelay: "10"},
@@ -314,7 +346,7 @@
                 const now = new Date().getTime();
 
                 eventTimes.forEach((event, index) => {
-                    const eventTime = new Date(event.time).getTime();
+                    const eventTime = new Date(event.time).getTime(); // current
                     const eventTimeM15 = eventTime - 15 * 60 * 1000; // 15 minutes before the event time
                     const eventTimeAfter = eventTime + event.timeDelay * 60 * 1000; // 2 hours after the event time
                     const timelineItem = timelineItems[index];
@@ -422,10 +454,14 @@
 
         <script>
             /* dobrze szukasz (: */
+            /* make it a different keyword, not minecraft and chicken jockey anymore */
+            /* hidden in eval() include to external file, connect to tumblr, leads to discord server, encrypted message which leads to secret page with easter egg similar to this but more advanced */
             let sequence = [];
             let additional = 10;
+            /* offset */
             let begin = 3;
             const difference = [-4,5,-9,-2,15,-17,5,14];
+            /*  difference between next letter - additional */
             const targetSequence = [begin];
             for (let i = 0; i < difference.length; i++) {
                 begin = begin + difference[i];
@@ -438,6 +474,7 @@
                 sequence.length > targetSequence.length ? sequence.shift() : null;
 
                 if (sequence.join("") === targetSequence.join("")) {
+                    /* konami code <3 */
                     console.log("↑↑↓↓←→←→BA START!");
                     document.querySelectorAll("summary").forEach((summary) => {
                         summary.addEventListener("mouseover", () => {
