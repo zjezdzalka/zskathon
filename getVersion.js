@@ -13,7 +13,7 @@ function getGitInfo() {
       
       const commit = fs.readFileSync(path.join(gitDir, branchPath), 'utf-8').trim().substring(0, 7);
       
-      return `${branch}@${commit}`;
+      return `${branch=="master"?"main":branch}@${commit}`;
     } else {
       return `detached@${headContent.substring(0, 7)}`;
     }
