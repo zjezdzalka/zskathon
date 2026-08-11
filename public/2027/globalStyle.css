@@ -7,6 +7,7 @@
     --background-blue: rgb(10, 19, 82);
     --background-blue-transparent: rgba(10, 18, 82, 0.418);
     --background-dark-blue: #040b3d;
+    --background-dark-blue-half-transparent: #050a38f8;
     --background-dark-blue-transparent: #050a38e1;
     --white-half-transparent: #f8f8fc7c;
     --white: #F8F8FC;
@@ -46,6 +47,7 @@ header, section, footer {
     max-width: 1000px;
     margin: auto;
     padding: 2rem 1rem;
+    border-radius: 2px;
 }
 
 header {
@@ -56,6 +58,7 @@ header {
 
 footer{
     padding-bottom: 0;
+    background-color: var(--background-dark-blue-transparent);
 }
 
 header h1 p{

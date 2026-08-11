@@ -24,14 +24,46 @@
     </head>
     <body>
         <main style="background-color: rgba(0, 0, 0, 0); height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
-            <section style="color: white; text-align: center; font-size: 5em; font-family: 'CubicFive10', sans-serif;">Coming soon..!</section>
+            <section style="
+                color: white; 
+                text-align: center; 
+                font-size: 5rem; 
+                font-family: 'CubicFive10', sans-serif; 
+                background-color: var(--background-dark-blue-half-transparent); 
+                border-radius: 2px;
+                padding: 1rem 2rem;"
+            >
+                Coming soon..!
+                <p style="
+                    font-style:italic;
+                    font-size: 1.5rem; 
+                    font-family: 'Lexend', sans-serif, monospace;
+                    font-weight: 100;
+                ">we promise ;p</p>
+            </section>
 
             <footer style="margin-top: 40vh;">
-                <p>&copy; Made with &hearts; by&nbsp;<a href="https://www.zsk.poznan.pl" target="_blank">ZSK_Poznań</a>&nbsp;2025</p>
+                <p>&copy; Made with &hearts; by&nbsp;<a href="https://www.zsk.poznan.pl" target="_blank">ZSK_Poznań</a>&nbsp;<span id="footer_date">2026</span></p>
                 <p>|</p>
                 <p><a href="mailto:zskathon@gmail.com" target="_blank">Kontakt</a></p>
+                <p id="ver1"></p>
+                <p id="ver"></p>
             </footer>
         </main>
+
+        <script>
+            fetch('/api/version')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ver1').textContent = '|';
+                    document.getElementById('ver').textContent = data.version;
+                    document.getElementById('footer_date').textContent = data.year;
+                })
+                .catch(err => {
+                    console.error('Error fetching version:', err);
+                    document.getElementById('ver').textContent = '';
+                });
+        </script>
 
         <!-- googl -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WHQGPXYFT"></script>

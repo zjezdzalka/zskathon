@@ -49,8 +49,8 @@ app.use( (req,res,next)=>{
 
 app.listen(port, () => {
   console.log(`everything works! yippee :3 http://localhost:${port} <~ hosted here`);
-  console.log(`git info: ${getGitInfo()}`);
-  console.log(`date started: ${new Date().toISOString()}`);
+  console.log(`current commit: ${getGitInfo()}`);
+  console.log(`datetime started: ${new Date().toISOString()}`);
 });
 
 module.exports = app;

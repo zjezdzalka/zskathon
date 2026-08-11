@@ -29,7 +29,7 @@
             </section>
 
             <footer style="margin-top: 40vh;">
-                <p>&copy; Made with &hearts; by&nbsp;<a href="https://www.zsk.poznan.pl" target="_blank">ZSK_Poznań</a>&nbsp;2026</p>
+                <p>&copy; Made with &hearts; by&nbsp;<a href="https://www.zsk.poznan.pl" target="_blank">ZSK_Poznań</a>&nbsp;<span id="footer_date">2026</span></p>
                 <p>|</p>
                 <p><a href="mailto:zskathon@gmail.com" target="_blank">Kontakt</a></p>
                 <p id="ver1"></p>
@@ -43,6 +43,7 @@
                 .then(data => {
                     document.getElementById('ver1').textContent = '|';
                     document.getElementById('ver').textContent = data.version;
+                    document.getElementById('footer_date').textContent = data.year;
                 })
                 .catch(err => {
                     console.error('Error fetching version:', err);
