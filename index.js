@@ -4,7 +4,7 @@ const { getGitInfo } = require('./getVersion');
 const fs = require('fs');
 
 const app = express();
-const port = 3000;
+const port = 666;
 
 const safeRegex = /^[0-9]+$/;
 
@@ -22,7 +22,7 @@ app.get('/', function(req, res){
   res.sendFile(path.join(siteDir, 'app', `index.html`));
 });
 
-app.get('/archives/:id', function(req, res){
+app.get('/:id', function(req, res){
   const {id} = req.params;
 
   if (!safeRegex.test(id)) {

@@ -1,0 +1,15 @@
+not found :3
+
+<div id="ver"></div>
+
+<script>
+    fetch('/api/version')
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('ver').textContent = data.version;
+        })
+        .catch(err => {
+            console.error('Error fetching version:', err);
+            document.getElementById('ver').textContent = '';
+        });
+</script>
