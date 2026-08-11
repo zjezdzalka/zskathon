@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>ZSKathon26</title>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Zapisz się już wkrótce na drugą edycję hackathonu w historii ZSK! Do zobaczenia 23-24 maja 2026!" />
+        <meta name="author" content="ZSKathon" />
+        <meta http-equiv="refresh" content="1800" />
+    
+        <!-- Discord Embed -->
+
+        <meta name="og:title" content="ZSKathon27"/>
+        <meta name="og:description" content="Zapisz się już teraz na DRUGI hackathon w historii ZSK! Do zobaczenia 24-25 maja!"/>
+        <meta name="og:url" content="https://zskathon.vercel.app/"/>
+        <meta name="og:image" content="https://zskathon.vercel.app/embed.png"/>
+        <meta name="theme-color" content="#0a1352"/>
+    
+
+        <!-- Link Tags -->
+    
+        <link rel="icon" type="image/x-icon" href="/2027/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/2027/globalStyle.css" />
+
+    </head>
+    <body>
+        <main>
+            <header>
+                <!-- align vertically because its fucking off by 1 pixel and it pisses me off -->
+                <h1><img src="/2027/logo_white.svg"/><p>2026</p></h1>
+                <div id="ctdwn-con">
+                    <p id="event-date">23–24 maja&nbsp;</p>
+                    <p id="ctdwn"></p>
+                </div>
+                <div id="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </header>
+
+            <!--
+            would add menu bar at top, and add a link to wyniki.html, faq.html, link do zapisów
+            -->
+
+            <!-- to make the documents on the site and not on the 1d if possible -->
+
+            <!--<section class="card leaderboard">
+                <h2>Wyniki</h2>
+                <div class="first"><p class="bold">🏆 1. </p>&nbsp;</div>
+                <div class="second"><p class="bold">🥈 2. </p>&nbsp;</div>
+                <div class="third"><p class="bold">🥉 3. </p>&nbsp;</div>
+                <div class="fourth"><p class="bold">🖥️ 4. </p>&nbsp;</div>
+                <br>
+                <p class="dodinfo">Dziękujemy za udział i gratulujemy każdej drużynie na ZSKathonie! Mamy nadzieję, że podobał Wam się event. &hearts;</p>
+            </section>-->
+
+            <!-- 
+            do zmiany wygląd kart i backgroundu
+            would make the site a bit more dark and add a bit more scrollability, but keep the effect of pixels 
+            -->
+
+            <!-- to add section during event that gives info of tips such as, make sure to drink water! and some other easter eggs -->
+
+            <section class="card">
+                <h2>O wydarzeniu</h2>
+                <!-- do skrócenia -->
+                <p>ZSKathon to 24-godzinne wydarzenie, podczas którego uczniowie różnych kierunków w ZSK opracowują rozwiązanie dla problemu podanego na początku wydarzenia. 
+                   Uczestnicy współpracują nad innowacyjnymi projektami i rozwiązaniami rozważając różne aspekty problemu. 
+                   To idealna okazja do rozwijania kompetencji swojej przyszłości, takich jak kreatywność, praca zespołowa i współpraca.</p>
+            </section>
+
+            <section class="card">
+                <h2>Rejestracja</h2>
+                <p>Aby wziąć udział w wydarzeniu, zarejestruj swoją drużynę (2-5 osób) za pomocą poniższego formularza.</p>
+                <a href="" class="btn" target="_blank">S00N ;)</a>
+                <!--<a href="https://forms.office.com/e/" class="btn" target="_blank">FORMULARZ</a>-->
+            </section>
+
+           <section class="card">
+                <!--left right left right style, three columns (mid - are the dots), grid, and until >800px do not do standarised text right dots left-->
+                <h2>Harmonogram</h2>
+                <div class="timeline">
+                    <!--do zautomatyzowania przez js, bo za dużo wklejania i wyliczania-->
+                    <div class="timeline-item">
+                        <div class="tml-left">
+                            <div class="circle"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="tml-content">
+                            <strong>23 maja, 09:00</strong> Rozpoczęcie rejestracji
+                            <i>Szkoła będzie zamknięta dla uczestników dopóki akredytacja się nie rozpocznie.</i>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tml-left">
+                            <div class="line"></div>
+                            <div class="circle"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="tml-content">
+                            <strong>23 maja, 10:30</strong> Koniec rejestracji
+                            <i>Zamknięcie szkoły dla osób z zewnątrz.</i>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tml-left">
+                            <div class="line"></div>
+                            <div class="circle"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="tml-content">
+                            <strong>23 maja, 11:00</strong> Ogłoszenie tematu
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tml-left">
+                            <div class="line"></div>
+                            <div class="circle"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="tml-content">
+                            <strong>23 maja, 11:10-21:00</strong> Praca nad projektami
+                            <i>W między czasie pojawią się prezentacje :]</i>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tml-left">
+                            <div class="line"></div>
+                            <div class="circle"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="tml-content">
+                            <strong>23 maja, 21:00</strong> Czas na integrację, gry i jedzonko
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tml-left">
+                            <div class="line"></div>
+                            <div class="circle"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="tml-content">
+                            <strong>23 maja, 22:00-11:00</strong> Ostatnie poprawki i prezentacje
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tml-left">
+                            <div class="line"></div>
+                            <div class="circle"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="tml-content">
+                            <strong>24 maja, 13:00</strong> Ogłoszenie trzech najlepszych projektów
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tml-left">
+                            <div class="line"></div>
+                            <div class="circle"></div>
+                            <div class="line"></div>
+                        </div>
+                        <div class="tml-content">
+                            <strong>24 maja, 13:30-14:45</strong> Prezentacje i pitch top 3 zespołów
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="tml-left">
+                            <div class="line"></div>
+                            <div class="circle"></div>
+                        </div>
+                        <div class="tml-content">
+                            <strong>24 maja, 15:00</strong> Ogłoszenie zwycięskiej drużyny ZSKathon'u
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!--<section class="card">
+                <h2>Harmonogram</h2>
+                <ul>
+                    <li><strong>24 maja, 09:00</strong> – Rozpoczęcie rejestracji</li>
+                    <li><strong>24 maja, 11:00</strong> – Koniec rejestracji i ogłoszenie tematu</li>
+                    <li><strong>24 maja, 11:10-21:00</strong> – Praca nad projektami</li>
+                    <li><strong>24 maja, 21:00</strong> – Czas na integrację, gry i jedzonko</li>
+                    <li><strong>25 maja, 22:00-11:00</strong> – Ostatnie poprawki i prezentacje</li>
+                    <li><strong>25 maja, 13:00</strong> – Ogłoszenie trzech najlepszych projektów</li>
+                    <li><strong>25 maja, 13:30-14:45</strong> – Prezentacje i pitch'e top 3 zespołów</li>
+                    <li><strong>25 maja, 15:00</strong> – Ogłoszenie zwyciężcy ZSKathon'u</li>
+                </ul>
+            </section>-->
+            
+            <section class="card">
+                <h2>FAQ</h2>
+                <details>
+                    <summary>Czym jest hackathon?</summary>
+                    <p>Hackathon to konkurs, gdzie ludzie tworzą nowe pomysły i rozwiązania w bardzo krótkim czasie. Pracują w zespołach, żeby jak najszybciej coś wymyślić i zrobić działający prototyp. Hackathon to trochę maraton dla mózgu – zamiast biegać, myślisz i tworzysz! :&rpar;</p>
+                </details>
+                <details>
+                    <summary>Czy muszę umieć programować?</summary>
+                    <p>Nie musisz! Jeśli lubisz programować – super, na pewno Twój zespół się odnajdzie! Ale jeśli Twoją mocną stroną jest marketing, elektronika, design czy po prostu kreatywne pomysły – też jesteś mile widziany. Liczy się pasja i chęć tworzenia, nie tylko kod!</p>
+                </details>
+                <details>
+                    <summary>Czym jest pitch?</summary>
+                    <p>Pitch to krótkie przemówienie, w którym w prosty sposób opowiadasz o swoim pomyśle. To szansa, aby pokazać jury dlaczego Twój projekt jest super! Maksymalny czas prezentacji to 7 minut. Pamiętaj, że to nie jest matura ustna z polskiego i NIE musisz przejmować się błędami!</p>
+                </details>
+                <details>
+                    <summary>Jakie sale będą dostępne dla uczestników?</summary>
+                    <p>Dostęp do mapy wydarzenia jest dostępny tutaj: <a href="" target="_blank" rel="noopener noreferrer">Link do mapy.</a></p>
+                </details>
+                <details>
+                    <summary>Czy wydarzenie trwa całą noc?</summary>
+                    <p>Tak, ale będą dostępne strefy odpoczynku i relaksu. Pamiętaj, że nie trzeba pracować przez całą noc, a tempo pracy wyznaczacie sobie sami!</p>
+                </details>
+                <details>
+                    <summary>Czy potrzebuję zgody rodziców?</summary>
+                    <p>Każdy uczestnik jest zobowiązany do wypełnienia zgody. W przypadku uczestnika niepełnoletniego, zgodę wypełnia jego opiekun prawny. <a href="" target="_blank" rel="noopener noreferrer">Link do zgody.</a></p>
+                </details>
+                <details>
+                    <summary>Czy dostanę certyfikat uczestnictwa?</summary>
+                    <p>Tak! Każdy uczestnik otrzyma certyfikat uczestnictwa w wydarzeniu.</p>
+                </details>
+                <details>
+                    <summary>Czy muszę przynieść własny sprzęt?</summary>
+                    <p>Zalecamy przyniesienie własnego laptopa lub innego sprzętu, który może być potrzebny do pracy nad projektem. Zapewniamy dostęp do Wi-Fi oraz podstawowe narzędzia i oprogramowanie.</p>
+                </details>
+
+            </section>
+            
+            <section class="card">
+                <h2>Partnerzy</h2>
+                <p>Tu pojawią się logotypy naszych sponsorów i partnerów wspierających wydarzenie.</p>
+                <div class="partners">
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                <div class="partner-logo"></div>
+                </div>
+            </section>
+
+            <footer>
+                <p>&copy; Made with &hearts; by&nbsp;<a href="https://www.zsk.poznan.pl" target="_blank">ZSK_Poznań</a>&nbsp;<span id="footer_date">2026</span></p>
+                <p>|</p>
+                <p><a href="" target="_blank">Regulamin</a></p>
+                <p>|</p>
+                <p><a href="" target="_blank">Zgoda na udział</a></p>
+                <p>|</p>
+                <p><a href="mailto:zskathon@gmail.com" target="_blank">Kontakt</a></p>
+                <p id="ver1"></p>
+                <p id="ver"></p>
+            </footer>
+        </main>
+
+        <script>
+            fetch('/api/version')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ver1').textContent = '|';
+                    document.getElementById('ver').textContent = data.version;
+                    document.getElementById('footer_date').textContent = data.year;
+                })
+                .catch(err => {
+                    console.error('Error fetching version:', err);
+                    document.getElementById('ver').textContent = '';
+                });
+        </script>
+
+        <!-- googl -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WHQGPXYFT"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-4WHQGPXYFT');
+            // zgadza się, liczymy ile osób tu zajrzało na stronkę ;)
+        </script>
+
+        <!-- /* timer */ -->
+        <script>
+            const countdownStart = new Date('2027-04-01T00:00:00').getTime();
+            const eventStart = new Date('2027-05-23T09:00:00').getTime();
+            // const eventStart = new Date('2026-04-24T09:00:00').getTime();
+            const eventEnd = new Date('2027-05-24T16:00:00').getTime();
+            // const eventEnd = new Date('2026-04-25T23:59:59').getTime();
+            const totalCountdownDuration = eventStart - countdownStart;
+
+            function updateCountdown() {
+                const now = new Date().getTime();
+                let distance, progress, statusText;
+
+                if (now < eventStart) {
+                    distance = eventStart - now;
+                    const elapsed = now - countdownStart;
+                    progress = Math.max(0,Math.min((elapsed / totalCountdownDuration) * 100, 100));
+
+                    if (window.innerWidth <= 600) {
+                        document.getElementById("event-date").innerHTML = "23–24 maja";
+                        statusText = `${formatTime(distance)}`;
+                    } 
+                    else {
+                        document.getElementById("event-date").innerHTML = "23–24 maja&nbsp;";
+                        statusText = ` | ${formatTime(distance)}`;
+                    }
+                }
+                else if (now <= eventEnd) {
+                    progress = 100;
+                    if (window.innerWidth <= 600) {
+                        document.getElementById("event-date").innerHTML = "23–24 maja";
+                        statusText = "in progress...";
+                    }
+                    else {
+                        document.getElementById("event-date").innerHTML = "23–24 maja&nbsp;";
+                        statusText = " | in progress...";
+                    }
+                }
+                else {
+                    progress = 100;
+                    document.getElementById("event-date").textContent = "";
+                    if (window.innerWidth <= 600) {
+                        statusText = "see you next edition! ⌨️";
+                    }
+                    else {
+                        statusText = "see you next edition! ⌨️";
+                    }
+                }
+
+                document.getElementById("ctdwn").textContent = statusText;
+                document.getElementById("progress-bar").style.width = `${progress}%`;
+                
+                const progressBarContainer = document.getElementById("progress-bar-container");
+                if (now >= eventStart) {
+                    progressBarContainer.style.display = "none";
+                }
+
+                const progressBar = document.getElementById("progress-bar");
+
+                /* make progess procent show on the middle */
+                progressBar.innerText = `${progress.toFixed(0)}%`;
+            }
+
+            function formatTime(ms) {
+                const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+                return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        </script>
+
+        <!-- /* timeline dot filler */ -->
+        <script>
+
+            /* compress to one generation and not static */
+            const eventTimes = [
+                { time: "2027-05-23T09:00:00", title: "Rozpoczęcie rejestracji", timeDelay: "20"},
+                { time: "2027-05-23T10:30:00", title: "Koniec rejestracji", timeDelay: "10"},
+                { time: "2027-05-23T11:00:00", title: "Ogłoszenie tematu", timeDelay: "10"},
+                { time: "2027-05-23T11:10:00", title: "Praca nad projektami", timeDelay: "590" },
+                { time: "2027-05-23T21:00:00", title: "Czas na integrację, gry i jedzonko", timeDelay: "60" },
+                { time: "2027-05-23T22:00:00", title: "Ostatnie poprawki i prezentacje", timeDelay: "900" },
+                { time: "2027-05-24T13:00:00", title: "Ogłoszenie trzech najlepszych projektów", timeDelay: "20" },
+                { time: "2027-05-24T13:30:00", title: "Prezentacje i pitch'e top 3 zespołów", timeDelay: "75" },
+                { time: "2027-05-24T15:00:00", title: "Ogłoszenie zwyciężcy ZSKathon'u", timeDelay: "20" }
+            ]
+
+            const timelineItems = document.querySelectorAll(".timeline-item");
+            
+            function updateTimeline() {
+                const now = new Date().getTime();
+
+                eventTimes.forEach((event, index) => {
+                    const eventTime = new Date(event.time).getTime(); // current
+                    const eventTimeM15 = eventTime - 15 * 60 * 1000; // 15 minutes before the event time
+                    const eventTimeAfter = eventTime + event.timeDelay * 60 * 1000; // 2 hours after the event time
+                    const timelineItem = timelineItems[index];
+                    const circle = timelineItem.querySelector(".circle");
+
+                    if (now >= eventTimeAfter) {
+                        circle.classList.add("filled");
+                        circle.classList.remove("current");
+                    } else if (now >= eventTime) {
+                        circle.classList.add("current");
+                        circle.classList.remove("filled");
+                    } else {
+                        circle.classList.remove("filled", "current");
+                    }
+                });
+            }
+
+            updateTimeline();
+            setInterval(updateTimeline, 60_000); // Update every minute
+        </script>
+
+        <!-- /* open one details at a time */ -->
+        <script>
+            let allDetails = document.querySelectorAll("details");
+            allDetails.forEach((details) => {
+                details.addEventListener("click", () => {
+                    allDetails.forEach((otherDetails) => {
+                        if (otherDetails !== details) {
+                            otherDetails.removeAttribute("open");
+                        }
+                    });
+                });
+            });
+
+        </script>
+
+        <!-- /* pixels falling effect */ -->
+        <script>
+            const starCount = 75;
+            const starColor = "rgba(255, 255, 255, 0.5)";
+            const starContainer = document.createElement("div");
+
+            starContainer.style.position = "fixed";
+            starContainer.style.top = "0";
+            starContainer.style.left = "0";
+            starContainer.style.width = "100%";
+            starContainer.style.height = "100%";
+            starContainer.style.pointerEvents = "none";
+            starContainer.style.overflow = "hidden";
+            starContainer.style.zIndex = "-1";
+
+            document.body.appendChild(starContainer);
+
+            function getDocumentHeight() {
+                return Math.max(
+                    document.body.scrollHeight,
+                    document.documentElement.scrollHeight,
+                    document.body.offsetHeight,
+                    document.documentElement.offsetHeight,
+                    document.documentElement.clientHeight
+                );
+            }
+
+            function createStars() {
+                while (starContainer.firstChild) {
+                    starContainer.removeChild(starContainer.firstChild);
+                }
+                
+                const docHeight = getDocumentHeight();
+                
+                for (let i = 0; i < starCount; i++) {
+                    let starSize = Math.floor(Math.random() * 16) + 10; /* (10 - 25px) */
+            
+                    const star = document.createElement("div");
+                    star.style.position = "absolute";
+                    star.style.width = `${starSize}px`;
+                    star.style.height = `${starSize}px`;
+                    star.style.backgroundColor = starColor;
+                    star.style.opacity = Math.random() * 0.5 + 0.5;
+                    
+                    star.style.top = `-${starSize}px`;
+                    star.style.left = `${Math.random() * 100}vw`;
+                    
+                    starContainer.appendChild(star);
+
+                    // (6-12 sekund)
+                    const fallDuration = Math.random() * 6000 + 6000;
+                    
+                    const fallAnimation = star.animate([
+                        { transform: `translateY(0)` },
+                        { transform: `translateY(${docHeight + starSize}px)` }
+                    ], {
+                        duration: fallDuration,
+                        easing: "linear",
+                        iterations: Infinity
+                    });
+
+                    fallAnimation.startTime = Math.random() * 9000;
+                }
+            }
+
+            createStars();
+            window.addEventListener("resize", createStars);
+        </script>
+
+        <script>
+            /* dobrze szukasz (: */
+            /* make it a different keyword, not minecraft and chicken jockey anymore */
+            /* hidden in eval() include to external file, connect to tumblr, leads to discord server, encrypted message which leads to secret page with easter egg similar to this but more advanced */
+            let sequence = [];
+            let additional = 10;
+            /* offset */
+            let begin = 3;
+            const difference = [-4,5,-9,-2,15,-17,5,14];
+            /*  difference between next letter - additional */
+            const targetSequence = [begin];
+            for (let i = 0; i < difference.length; i++) {
+                begin = begin + difference[i];
+                targetSequence.push(begin);
+            }
+            
+            document.addEventListener("keydown", function(event) {
+                sequence.push(event.key.toLowerCase().charCodeAt(0)-"a".charCodeAt(0)+1-additional);
+                
+                sequence.length > targetSequence.length ? sequence.shift() : null;
+
+                if (sequence.join("") === targetSequence.join("")) {
+                    /* konami code <3 */
+                    console.log("↑↑↓↓←→←→BA START!");
+                    document.querySelectorAll("summary").forEach((summary) => {
+                        summary.addEventListener("mouseover", () => {
+                            summary.style.cursor = "url('cursor.webp'), pointer";
+                        });
+                        summary.addEventListener("mouseout", () => {
+                            summary.style.cursor = "default";
+                        }); 
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>

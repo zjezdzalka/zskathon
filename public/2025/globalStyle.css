@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    --background-blue: rgb(10, 19, 82);
+    --background-blue: #0a1352;
     --background-blue-transparent: rgba(10, 18, 82, 0.418);
     --background-dark-blue: #040b3d;
     --background-dark-blue-transparent: #050a38e1;

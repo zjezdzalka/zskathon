@@ -22,6 +22,10 @@ app.get('/', function(req, res){
   res.sendFile(path.join(siteDir, 'app', `index.html`));
 });
 
+app.get('/unofficial', function(req, res){
+  res.sendFile(path.join(siteDir, 'new', `index.html`));
+});
+
 app.get('/archive', function(req, res){
     res.sendFile(path.join(siteDir, `archive.html`));
 });
