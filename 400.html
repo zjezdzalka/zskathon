@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>ZSKathon400</title>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Druga edycja ZSKathonu!" />
+        <meta name="author" content="ZSKathon" />
+        <meta http-equiv="refresh" content="1800" />
+
+        <!-- Discord Embed -->
+
+        <meta name="og:title" content="ZSKathon27"/>
+        <meta name="og:description" content="Zapisz się już teraz na DRUGI hackathon w historii ZSK! Do zobaczenia 24-25 maja!"/>
+        <meta name="og:url" content="https://zskathon.vercel.app/"/>
+        <meta name="og:image" content="https://zskathon.vercel.app/embed.png"/>
+    
+        <!-- Link Tags -->
+    
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/baseStyle.css" />
+
+    </head>
+    <body>
+        <main style="background-color: rgba(0, 0, 0, 0); height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+            <section class="card">
+                no dir traversing 4 u :3
+            </section>
+
+            <footer style="margin-top: 40vh;">
+                <p>&copy; Made with &hearts; by&nbsp;<a href="https://www.zsk.poznan.pl" target="_blank">ZSK_Poznań</a>&nbsp;<span id="footer_date">2026</span></p>
+                <p>|</p>
+                <p><a href="mailto:zskathon@gmail.com" target="_blank">Kontakt</a></p>
+                <p id="ver1"></p>
+                <p id="ver"></p>
+            </footer>
+        </main>
+
+        <script>
+            fetch('/api/version')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ver1').textContent = '|';
+                    document.getElementById('ver').textContent = data.version;
+                    document.getElementById('footer_date').textContent = data.year;
+                })
+                .catch(err => {
+                    console.error('Error fetching version:', err);
+                    document.getElementById('ver').textContent = '';
+                });
+        </script>
+
+        <!-- googl -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WHQGPXYFT"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-4WHQGPXYFT');
+            // zgadza się, liczymy ile osób tu zajrzało na stronkę ;)
+        </script>
+
+        <!-- /* pixels falling effect */ -->
+        <script>
+            const starCount = 75;
+            const starColor = "rgba(255, 255, 255, 0.5)";
+            const starContainer = document.createElement("div");
+
+            starContainer.style.position = "fixed";
+            starContainer.style.top = "0";
+            starContainer.style.left = "0";
+            starContainer.style.width = "100%";
+            starContainer.style.height = "100%";
+            starContainer.style.pointerEvents = "none";
+            starContainer.style.overflow = "hidden";
+            starContainer.style.zIndex = "-1";
+
+            document.body.appendChild(starContainer);
+
+            function getDocumentHeight() {
+                return Math.max(
+                    document.body.scrollHeight,
+                    document.documentElement.scrollHeight,
+                    document.body.offsetHeight,
+                    document.documentElement.offsetHeight,
+                    document.documentElement.clientHeight
+                );
+            }
+
+            function createStars() {
+                while (starContainer.firstChild) {
+                    starContainer.removeChild(starContainer.firstChild);
+                }
+                
+                const docHeight = getDocumentHeight();
+                
+                for (let i = 0; i < starCount; i++) {
+                    let starSize = Math.floor(Math.random() * 16) + 10; /* (10 - 25px) */
+            
+                    const star = document.createElement("div");
+                    star.style.position = "absolute";
+                    star.style.width = `${starSize}px`;
+                    star.style.height = `${starSize}px`;
+                    star.style.backgroundColor = starColor;
+                    star.style.opacity = Math.random() * 0.5 + 0.5;
+                    
+                    star.style.top = `-${starSize}px`;
+                    star.style.left = `${Math.random() * 100}vw`;
+                    
+                    starContainer.appendChild(star);
+
+                    // (6-12 sekund)
+                    const fallDuration = Math.random() * 6000 + 6000;
+                    
+                    const fallAnimation = star.animate([
+                        { transform: `translateY(0)` },
+                        { transform: `translateY(${docHeight + starSize}px)` }
+                    ], {
+                        duration: fallDuration,
+                        easing: "linear",
+                        iterations: Infinity
+                    });
+
+                    fallAnimation.startTime = Math.random() * 9000;
+                }
+            }
+
+            createStars();
+            window.addEventListener("resize", createStars);
+        </script>
+    </body>
+</html>

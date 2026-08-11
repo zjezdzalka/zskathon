@@ -1,210 +1,74 @@
 <!DOCTYPE html>
 <html lang="pl">
     <head>
-        <title>ZSKathon25</title>
+        <title>ZSKathon27</title>
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Zapisz się już teraz na pierwszy hackathon w historii ZSK! Do zobaczenia 24-25 maja!" />
+        <meta name="description" content="Druga edycja ZSKathonu!" />
         <meta name="author" content="ZSKathon" />
         <meta http-equiv="refresh" content="1800" />
+
+        <!-- Discord Embed -->
+
+        <meta name="og:title" content="ZSKathon27"/>
+        <meta name="og:description" content="Zapisz się już teraz na DRUGI hackathon w historii ZSK! Do zobaczenia 24-25 maja!"/>
+        <meta name="og:url" content="https://zskathon.vercel.app/"/>
+        <meta name="og:image" content="https://zskathon.vercel.app/embed.png"/>
     
         <!-- Link Tags -->
     
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="globalStyle.css" />
+        <link rel="icon" type="image/x-icon" href="/2027/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/2027/globalStyle.css" />
 
     </head>
     <body>
-        <main>
-            <header>
-                <h1><img src="logo_white.svg"/><p>2025</p></h1>
-                <div id="ctdwn-con">
-                    <p id="event-date">24–25 maja&nbsp;</p>
-                    <p id="ctdwn"></p>
-                </div>
-                <div id="progress-bar-container">
-                    <div id="progress-bar"></div>
-                </div>
-            </header>
-
-            <section class="card leaderboard">
-                <h2>Wyniki</h2>
-                <div class="first"><p class="bold">🏆 1. </p>&nbsp;Wazzup Beijing</div>
-                <div class="second"><p class="bold">🥈 2. </p>&nbsp;Quintus</div>
-                <div class="third"><p class="bold">🥉 3. </p>&nbsp;Tim tfoih mażeń</div>
-                <div class="fourth"><p class="bold">🖥️ 4. </p>&nbsp;Młodzi dockerowscy</div>
-                <br>
-                <p class="dodinfo">Dziękujemy za udział i gratulujemy każdej drużynie na ZSKathonie! Mamy nadzieję, że podobał Wam się event. &hearts;</p>
+        <main style="background-color: rgba(0, 0, 0, 0); height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+            <section style="
+                color: white; 
+                text-align: center; 
+                font-size: 5rem; 
+                font-family: 'CubicFive10', sans-serif; 
+                background-color: var(--background-dark-blue-half-transparent); 
+                border-radius: 2px;
+                padding: 1rem 2rem;"
+            >
+                Coming soon..!
+                <p style="
+                    font-style:italic;
+                    font-size: 1.5rem; 
+                    font-family: 'Lexend', sans-serif, monospace;
+                    font-weight: 100;
+                    color: #aaa;
+                ">we promise ;p</p>
             </section>
 
-            <section class="card">
-                <h2>O wydarzeniu</h2>
-                <p>ZSKathon to 24-godzinny hackathon, podczas którego uczniowie różnych kierunków technicznych współpracują nad innowacyjnymi projektami, odpowiadając na realne wyzwania społeczne, szczególnie z obszaru zrównoważonego rozwoju. To okazja do rozwijania kompetencji przyszłości, takich jak kreatywność, przedsiębiorczość, praca zespołowa i odpowiedzialność społeczna.</p>
+            <section class="info" style="margin-top: 32%; background-color: var(--background-dark-blue-transparent); padding: 1rem 2rem; border-radius: 2px;">
+                <p style="color:#aaa">Time machine to previous editions: <a href="https://zskathon.vercel.app/archive" target="_blank" style="color:var(--font-color); text-decoration: none;">here</a></p>
             </section>
 
-            <!--<section class="card">
-                <h2>Rejestracja</h2>
-                <p>Aby wziąć udział w wydarzeniu, zarejestruj swoją drużynę (2-5 osób) za pomocą poniższego formularza.</p>
-                <a href="https://forms.office.com/e/yuftKGzWRK" class="btn" target="_blank">FORMULARZ</a>
-            </section>-->
-
-           <section class="card">
-                <h2>Harmonogram</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>24 maja, 09:00</strong> Rozpoczęcie rejestracji
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>24 maja, 10:30</strong> Koniec rejestracji
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>24 maja, 11:00</strong> Ogłoszenie tematu
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>24 maja, 11:10-21:00</strong> Praca nad projektami
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>24 maja, 21:00</strong> Czas na integrację, gry i jedzonko
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>24 maja, 22:00-11:00</strong> Ostatnie poprawki i prezentacje
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>25 maja, 13:00</strong> Ogłoszenie trzech najlepszych projektów
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>25 maja, 13:30-14:45</strong> Prezentacje i pitch top 3 zespołów
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>25 maja, 15:00</strong> Ogłoszenie zwyciężcy ZSKathon'u
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!--<section class="card">
-                <h2>Harmonogram</h2>
-                <ul>
-                    <li><strong>24 maja, 09:00</strong> – Rozpoczęcie rejestracji</li>
-                    <li><strong>24 maja, 11:00</strong> – Koniec rejestracji i ogłoszenie tematu</li>
-                    <li><strong>24 maja, 11:10-21:00</strong> – Praca nad projektami</li>
-                    <li><strong>24 maja, 21:00</strong> – Czas na integrację, gry i jedzonko</li>
-                    <li><strong>25 maja, 22:00-11:00</strong> – Ostatnie poprawki i prezentacje</li>
-                    <li><strong>25 maja, 13:00</strong> – Ogłoszenie trzech najlepszych projektów</li>
-                    <li><strong>25 maja, 13:30-14:45</strong> – Prezentacje i pitch'e top 3 zespołów</li>
-                    <li><strong>25 maja, 15:00</strong> – Ogłoszenie zwyciężcy ZSKathon'u</li>
-                </ul>
-            </section>-->
-            
-            <section class="card">
-                <h2>FAQ</h2>
-                <details>
-                    <summary>Czym jest hackathon?</summary>
-                    <p>Hackathon to konkurs, gdzie ludzie tworzą nowe pomysły i rozwiązania w bardzo krótkim czasie. Pracują w zespołach, żeby jak najszybciej coś wymyślić i zrobić działający prototyp. Hackathon to trochę maraton dla mózgu – zamiast biegać, myślisz i tworzysz! :&rpar;</p>
-                </details>
-                <details>
-                    <summary>Czy muszę umieć programować?</summary>
-                    <p>Nie musisz! Jeśli lubisz programować – super, na pewno Twój zespół się odnajdzie! Ale jeśli Twoją mocną stroną jest marketing, elektronika, design czy po prostu kreatywne pomysły – też jesteś mile widziany. Liczy się pasja i chęć tworzenia, nie tylko kod!</p>
-                </details>
-                <details>
-                    <summary>Czy mogę zgłosić się sam?</summary>
-                    <p>Preferujemy zespoły, ale pomożemy Ci znaleźć drużynę!</p>
-                </details>
-                <details>
-                    <summary>Czym jest pitch?</summary>
-                    <p>Pitch to krótkie przemówienie, w którym w prosty sposób opowiadasz o swoim pomyśle. To szansa, aby pokazać jury dlaczego Twój projekt jest super! Maksymalny czas prezentacji to 7 minut. Pamiętaj, że to nie jest matura ustna z polskiego i NIE musisz przejmować się błędami!</p>
-                </details>
-                <details>
-                    <summary>Czy wydarzenie trwa całą noc?</summary>
-                    <p>Tak, ale będą dostępne strefy odpoczynku i relaksu. Pamiętaj, że nie trzeba pracować przez całą noc, a tempo pracy wyznaczacie sobie sami!</p>
-                </details>
-                <details>
-                    <summary>Czy potrzebuję zgody rodziców?</summary>
-                    <p>Każdy uczestnik jest zobowiązany do wypełnienia zgody. W przypadku uczestnika niepełnoletniego, zgodę wypełnia jego opiekun prawny. <a href="https://shorturl.at/Qh5oe" target="_blank" rel="noopener noreferrer">Link do zgody.</a></p>
-                </details>
-            </section>
-            
-            <!--<section class="card">
-                <h2>Partnerzy</h2>
-                <p>Tu pojawią się logotypy naszych sponsorów i partnerów wspierających wydarzenie.</p>
-                <div class="partners">
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                <div class="partner-logo"></div>
-                </div>
-            </section>-->
-
-            <footer>
-                <p>&copy; Made with &hearts; by&nbsp;<a href="https://www.zsk.poznan.pl" target="_blank">ZSK_Poznań</a>&nbsp;2025</p>
-                <p>|</p>
-                <p><a href="https://shorturl.at/lPAlp" target="_blank">Regulamin</a></p>
-                <p>|</p>
-                <p><a href="https://shorturl.at/Qh5oe" target="_blank">Zgoda na udział</a></p>
+            <footer style="margin-bottom: 1.5rem;">
+                <p>&copy; Made with &hearts; by&nbsp;<a href="https://www.zsk.poznan.pl" target="_blank">ZSK_Poznań</a>&nbsp;<span id="footer_date">2026</span></p>
                 <p>|</p>
                 <p><a href="mailto:zskathon@gmail.com" target="_blank">Kontakt</a></p>
+                <p id="ver1"></p>
+                <p id="ver"></p>
             </footer>
         </main>
+
+        <script>
+            fetch('/api/version')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ver1').textContent = '|';
+                    document.getElementById('ver').textContent = data.version;
+                    document.getElementById('footer_date').textContent = data.year;
+                })
+                .catch(err => {
+                    console.error('Error fetching version:', err);
+                    document.getElementById('ver').textContent = '';
+                });
+        </script>
 
         <!-- googl -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WHQGPXYFT"></script>

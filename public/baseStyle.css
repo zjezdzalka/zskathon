@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --background-blue: rgb(10, 19, 82);
+    --background-blue-transparent: rgba(10, 18, 82, 0.418);
+    --background-dark-blue: #040b3d;
+    --background-dark-blue-half-transparent: #050a38f8;
+    --background-dark-blue-transparent: #050a38e1;
+    --white-half-transparent: #f8f8fc7c;
+    --white: #F8F8FC;
+    --font-color: #DEF249;
+}
+
+body {
+    font-family: "Lexend", sans-serif, monospace;
+    background: linear-gradient(to bottom right, var(--background-dark-blue), var(--background-blue));
+    color: white;
+    min-height: 100vh;
+    line-height: 1.5;
+    width: 100%;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main{
+    background-color: var(--background-dark-blue-transparent);
+    min-height: 100vh;
+    padding: 1.5rem 2rem 0 2rem;
+}
+
+section, footer {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem 1rem;
+}
+
+footer{
+    padding-bottom: 0;
+}
+
+.card {
+    background: var(--background-dark-blue-half-transparent);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    height: auto;
+}
+
+.card > p{
+    font-size: 1.1rem;
+}
+
+.card > a{
+    color: var(--font-color);
+    text-underline-offset: 3px;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    padding: 1rem;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    background-color: var(--background-dark-blue-transparent);
+}
+
+footer a {
+    color: var(--font-color);
+    text-decoration: none;
+}
