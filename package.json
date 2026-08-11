@@ -1,0 +1,30 @@
+{
+  "name": "zskathon",
+  "version": "1.0.0",
+  "description": "Website for ZSKathon - Hackathon at the ZSK School",
+  "keywords": [
+    "zskathon"
+  ],
+  "homepage": "https://github.com/zjezdzalka/zskathon#readme",
+  "bugs": {
+    "url": "https://github.com/zjezdzalka/zskathon/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zjezdzalka/zskathon.git"
+  },
+  "license": "ISC",
+  "author": "Marek Zjeżdżałka",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "dev": "node index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {}
+}

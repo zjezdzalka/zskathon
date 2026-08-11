@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const siteDir = __dirname + '/sites';
+const siteDir = __dirname;
 
 app.get('/api/version', (req, res) => {
   res.json({ version: getGitInfo() });
