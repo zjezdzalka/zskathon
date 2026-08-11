@@ -39,8 +39,24 @@ section, footer {
     padding: 2rem 1rem;
 }
 
-footer{
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    padding: 1rem;
     padding-bottom: 0;
+    user-select: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    background-color: var(--background-dark-blue-transparent);
+}
+
+footer a {
+    color: var(--font-color);
+    text-decoration: none;
 }
 
 .card {
@@ -58,23 +74,4 @@ footer{
 .card > a{
     color: var(--font-color);
     text-underline-offset: 3px;
-}
-
-footer {
-    text-align: center;
-    font-size: 0.9rem;
-    color: #aaa;
-    padding: 1rem;
-    user-select: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    background-color: var(--background-dark-blue-transparent);
-}
-
-footer a {
-    color: var(--font-color);
-    text-decoration: none;
 }
