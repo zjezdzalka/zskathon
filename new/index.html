@@ -28,13 +28,14 @@
         <main>
             <header>
                 <!-- align vertically because its fucking off by 1 pixel and it pisses me off -->
-                <h1><img src="/2027/logo_white.svg"/><p>2026</p></h1>
+                <h1><img src="/2027/logo_white.svg"/><p>2027</p></h1>
                 <div id="ctdwn-con">
-                    <p id="event-date">23–24 maja&nbsp;</p>
+                    <p id="event-date">xx–xx maja&nbsp;</p>
                     <p id="ctdwn"></p>
                 </div>
                 <div id="progress-bar-container">
                     <div id="progress-bar"></div>
+                    <div id="progress-text"></div>
                 </div>
             </header>
 
@@ -276,10 +277,29 @@
 
         <!-- /* timer */ -->
         <script>
-            const countdownStart = new Date('2027-04-01T00:00:00').getTime();
-            const eventStart = new Date('2027-05-23T09:00:00').getTime();
-            // const eventStart = new Date('2026-04-24T09:00:00').getTime();
-            const eventEnd = new Date('2027-05-24T16:00:00').getTime();
+            const searchParams = new URLSearchParams(window.location.search);
+            const testMode = searchParams.get("time") === "true"?true:false;
+
+            const [countdownStart, eventStart, eventEnd] = loadDates(testMode);
+
+            function loadDates(testMode){
+                let countdownStart, eventStart, eventEnd;
+                if(testMode){
+                    const time = new Date();
+                    countdownStart = time.getTime();
+                    eventStart = countdownStart + 10 * 1000; 
+                    // const eventStart = new Date('2026-04-24T09:00:00').getTime();
+                    eventEnd = countdownStart + 15 * 1000; 
+                }
+                else{
+                    countdownStart = new Date('2027-04-01T00:00:00').getTime();
+                    eventStart = new Date('2027-05-23T09:00:00').getTime();
+                    // const eventStart = new Date('2026-04-24T09:00:00').getTime();
+                    eventEnd = new Date('2027-05-24T16:00:00').getTime();
+                }
+
+                return [countdownStart, eventStart, eventEnd];
+            }
             // const eventEnd = new Date('2026-04-25T23:59:59').getTime();
             const totalCountdownDuration = eventStart - countdownStart;
 
@@ -288,9 +308,9 @@
                 let distance, progress, statusText;
 
                 if (now < eventStart) {
-                    distance = eventStart - now;
-                    const elapsed = now - countdownStart;
-                    progress = Math.max(0,Math.min((elapsed / totalCountdownDuration) * 100, 100));
+                    distance = eventStart - 1 - now;
+                    const elapsed = now - countdownStart + 1000;
+                    progress = Math.max(0,Math.min((elapsed / (totalCountdownDuration-1)) * 100, 100));
 
                     if (window.innerWidth <= 600) {
                         document.getElementById("event-date").innerHTML = "23–24 maja";
@@ -331,7 +351,7 @@
                     progressBarContainer.style.display = "none";
                 }
 
-                const progressBar = document.getElementById("progress-bar");
+                const progressBar = document.getElementById("progress-text");
 
                 /* make progess procent show on the middle */
                 progressBar.innerText = `${progress.toFixed(0)}%`;

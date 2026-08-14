@@ -9,7 +9,7 @@
     --background-dark-blue: #040b3d;
     --background-dark-blue-transparent: #050a38e1;
     --background-dark-blue-half-transparent: #050a38f8;
-    --white-half-transparent: #f8f8fc7c;
+    --white-half-transparent: #f8f8fcde;
     --white: #F8F8FC;
     --font-color: #DEF249;
 }
@@ -90,29 +90,40 @@ header h1 img {
 
 #progress-bar-container {
     width: 100%;
-    height: 10%;
+    height: 2rem;
     border-radius: 5px;
     border: 2px solid var(--white);
     overflow: hidden;
     margin-top: 1rem;
+    position: relative;
 }
 
 #progress-bar {
     height: 100%;
-    width: 100%;
+    width: 60%; 
     background-color: var(--white);
     border-radius: 3px;
-    transition: width 0.5s ease, background-color 0.5s ease, color 0.5s ease;
-    color: var(--background-blue);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 400;
+    transition: width 0.5s ease, background-color 0.5s ease;
 }
 
-#progress-bar:hover{
+#progress-bar:hover {
     background-color: var(--white-half-transparent);
+    color: white;
+}
+
+#progress-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
     color: var(--white);
+    mix-blend-mode: difference;
+    pointer-events: none;
 }
 
 #event-date, #ctdwn {

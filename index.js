@@ -55,6 +55,7 @@ app.listen(port, () => {
   console.log(`everything works! yippee :3 http://localhost:${port} <~ hosted here`);
   console.log(`current commit: ${getGitInfo()}`);
   console.log(`datetime started: ${new Date().toISOString()}`);
+  console.log(`testing new site locally here: http://localhost:${port}/unofficial?time=true`);
 });
 
 module.exports = app;
