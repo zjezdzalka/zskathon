@@ -147,6 +147,39 @@
 
         <!-- smooth scroll -->
         <script>
+            let currentScroll = window.pageYOffset;
+            let targetScroll = window.pageYOffset;
+            let isScrolling = false;
+
+            window.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                if (!isScrolling) {
+                    currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                    targetScroll = currentScroll;
+                }
+                targetScroll += e.deltaY;
+
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+
+                if (!isScrolling) { isScrolling = true; requestAnimationFrame(updateSmoothScroll); }
+            }, { passive: false });
+
+            function updateSmoothScroll() {
+                currentScroll += (targetScroll - currentScroll) * 0.1;
+                window.scrollTo(0, currentScroll);
+
+                if (Math.abs(targetScroll - currentScroll) > 0.5) requestAnimationFrame(updateSmoothScroll);
+                else isScrolling = false;
+            }
+
+            window.addEventListener('scroll', () => {
+                if (!isScrolling) {
+                    currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                    targetScroll = currentScroll;
+                }
+            });
+
             function smoothScrollTo(targetSelector, customDuration = "") {
                 const target = document.querySelector(targetSelector);
                 if (!target) return;
