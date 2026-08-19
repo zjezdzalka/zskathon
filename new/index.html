@@ -26,9 +26,15 @@
     </head>
     <body>
         <main>
+            <nav>
+                <a href="#registration">ZAPISY</a>
+                <a href="/zgody">ZGODY</a>
+                <a href="#faq">FAQ</a>
+            </nav>
             <header>
-                <!-- align vertically because its off by 1 pixel and it angers me -->
-                <h1><img src="/2027/logo_white.svg"/><p>2027</p></h1>
+                <h1>
+                    <img src="/2027/logo_white.svg"/><p>2027</p>
+                </h1>
                 <div id="ctdwn-con">
                     <p id="event-date">xx–xx maja&nbsp;</p>
                     <p id="ctdwn"></p>
@@ -39,7 +45,7 @@
                 </div>
                 <div id="stream-link-container" style="display: none; justify-content: center; width: 100%;">
                     <p>check out out stream here:</p>
-                    <a href="#meow" target="_blank" style="margin-left: 0.5rem;">link</a>
+                    <a href="#meow" target="_blank" style="margin-left: 0.5rem; color:var(--font-color); text-underline-offset: 0.3rem;">link</a>
                 </div>
             </header>
 
@@ -74,7 +80,7 @@
                    To idealna okazja do rozwijania kompetencji swojej przyszłości, takich jak kreatywność, praca zespołowa i współpraca.</p>
             </section>
 
-            <section class="card">
+            <section class="card" id="registration">
                 <h2>Rejestracja</h2>
                 <p>Aby wziąć udział w wydarzeniu, zarejestruj swoją drużynę (2-5 osób) za pomocą poniższego formularza.</p>
                 <a href="" class="btn" target="_blank">S00N ;&#41;</a>
@@ -87,41 +93,8 @@
                 <div class="timeline"></div>
             </section>
             
-            <section class="card">
+            <section class="card" id="faq">
                 <h2>FAQ</h2>
-                <details>
-                    <summary>Czym jest hackathon?</summary>
-                    <p>Hackathon to konkurs, gdzie ludzie tworzą nowe pomysły i rozwiązania w bardzo krótkim czasie. Pracują w zespołach, żeby jak najszybciej coś wymyślić i zrobić działający prototyp. Hackathon to trochę maraton dla mózgu – zamiast biegać, myślisz i tworzysz! :&rpar;</p>
-                </details>
-                <details>
-                    <summary>Czy muszę umieć programować?</summary>
-                    <p>Nie musisz! Jeśli lubisz programować – super, na pewno Twój zespół się odnajdzie! Ale jeśli Twoją mocną stroną jest marketing, elektronika, design czy po prostu kreatywne pomysły – też jesteś mile widziany. Liczy się pasja i chęć tworzenia, nie tylko kod!</p>
-                </details>
-                <details>
-                    <summary>Czym jest pitch?</summary>
-                    <p>Pitch to krótkie przemówienie, w którym w prosty sposób opowiadasz o swoim pomyśle. To szansa, aby pokazać jury dlaczego Twój projekt jest super! Maksymalny czas prezentacji to 7 minut. Pamiętaj, że to nie jest matura ustna z polskiego i NIE musisz przejmować się błędami!</p>
-                </details>
-                <details>
-                    <summary>Jakie sale będą dostępne dla uczestników?</summary>
-                    <p>Dostęp do mapy wydarzenia jest dostępny tutaj: <a href="" target="_blank" rel="noopener noreferrer">Link do mapy.</a></p>
-                </details>
-                <details>
-                    <summary>Czy wydarzenie trwa całą noc?</summary>
-                    <p>Tak, ale będą dostępne strefy odpoczynku i relaksu. Pamiętaj, że nie trzeba pracować przez całą noc, a tempo pracy wyznaczacie sobie sami!</p>
-                </details>
-                <details>
-                    <summary>Czy potrzebuję zgody rodziców?</summary>
-                    <p>Każdy uczestnik jest zobowiązany do wypełnienia zgody. W przypadku uczestnika niepełnoletniego, zgodę wypełnia jego opiekun prawny. <a href="" target="_blank" rel="noopener noreferrer">Link do zgody.</a></p>
-                </details>
-                <details>
-                    <summary>Czy dostanę certyfikat uczestnictwa?</summary>
-                    <p>Tak! Każdy uczestnik otrzyma certyfikat uczestnictwa w wydarzeniu.</p>
-                </details>
-                <details>
-                    <summary>Czy muszę przynieść własny sprzęt?</summary>
-                    <p>Zalecamy przyniesienie własnego laptopa lub innego sprzętu, który może być potrzebny do pracy nad projektem. Zapewniamy dostęp do Wi-Fi oraz podstawowe narzędzia i oprogramowanie.</p>
-                </details>
-
             </section>
             
             <section class="card">
@@ -170,6 +143,56 @@
 
             gtag('config', 'G-4WHQGPXYFT');
             // zgadza się, liczymy ile osób tu zajrzało na stronkę ;)
+        </script>
+
+        <!-- smooth scroll -->
+        <script>
+            function smoothScrollTo(targetSelector, customDuration = "") {
+                const target = document.querySelector(targetSelector);
+                if (!target) return;
+
+                const startPosition = window.pageYOffset || document.documentElement.scrollTop;
+                
+                const headerOffset = 0; 
+                const targetPosition = target.getBoundingClientRect().top + startPosition - headerOffset;
+                const distance = targetPosition - startPosition;
+
+                if (Math.abs(distance) < 5) return;
+
+                let duration = customDuration!==""?customDuration:(Math.min(Math.max(Math.abs(distance) * 0.4, 350), 800));
+
+                let startTime = null;
+
+                function easeOut(x) {
+                    return 1 - Math.pow(1 - x, 5);
+                }
+
+                function animation(currentTime) {
+                    if (startTime === null) startTime = currentTime;
+                    const timeElapsed = currentTime - startTime;
+                    const progress = Math.min(timeElapsed / duration, 1);
+                    const easeProgress = easeOut(progress);
+
+                    window.scrollTo(0, startPosition + (distance * easeProgress));
+
+                    if (timeElapsed < duration) {
+                        requestAnimationFrame(animation);
+                    }
+                }
+
+                requestAnimationFrame(animation);
+            }
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#' || !targetId) return;
+
+                    e.preventDefault();
+                    
+                    smoothScrollTo(targetId, 1500); // ms
+                });
+            });
         </script>
 
         <!-- timer -->
@@ -288,6 +311,65 @@
             updateCountdown(countdownStart, eventStart, eventEnd);
             let loopInterval = setInterval(() => updateCountdown(countdownStart, eventStart, eventEnd), 1000);
 
+        </script>
+
+        <!-- FAQ -->
+        <script>
+            const FAQ = [
+                { 
+                    question: "Czym jest hackathon?", 
+                    answer: "Hackathon to konkurs, gdzie ludzie tworzą nowe pomysły i rozwiązania w bardzo krótkim czasie. Pracują w zespołach, żeby jak najszybciej coś wymyślić i zrobić działający prototyp. Hackathon to trochę maraton dla mózgu – zamiast biegać, myślisz i tworzysz! :&rpar;"
+                },
+                { 
+                    question: "Czy muszę umieć programować?", 
+                    answer: "Nie musisz! Jeśli lubisz programować – super, na pewno Twój zespół się odnajdzie! Ale jeśli Twoją mocną stroną jest marketing, elektronika, design czy po prostu kreatywne pomysły – też jesteś mile widziany. Liczy się pasja i chęć tworzenia, nie tylko kod!"
+                },
+                { 
+                    question: "Czym jest pitch?", 
+                    answer: "Pitch to krótkie przemówienie, w którym w prosty sposób opowiadasz o swoim pomyśle. To szansa, aby pokazać jury dlaczego Twój projekt jest super! Maksymalny czas prezentacji to 7 minut. Pamiętaj, że to nie jest matura ustna z polskiego i NIE musisz przejmować się błędami!"
+                },
+                { 
+                    question: "Jakie sale będą dostępne dla uczestników?", 
+                    answer: "Dostęp do mapy wydarzenia jest dostępny tutaj: <a href='/mapa' target='_blank' rel='noopener noreferrer'>Link do mapy.</a>"
+                },
+                { 
+                    question: "Czy wydarzenie trwa całą noc?", 
+                    answer: "Tak, ale będą dostępne strefy odpoczynku i relaksu. Pamiętaj, że nie trzeba pracować przez całą noc, a tempo pracy wyznaczacie sobie sami!"
+                },
+                { 
+                    question: "Czy potrzebuję zgody rodziców?", 
+                    answer: "Każdy uczestnik jest zobowiązany do wypełnienia zgody. W przypadku uczestnika niepełnoletniego, zgodę wypełnia jego opiekun prawny. <a href='/zgody' rel='noopener noreferrer'>Link do zgody.</a>"
+                },
+                { 
+                    question: "Czy dostanę certyfikat uczestnictwa?", 
+                    answer: "Tak! Każdy uczestnik otrzyma certyfikat uczestnictwa w wydarzeniu."
+                },
+                { 
+                    question: "Czy muszę przynieść własny sprzęt?", 
+                    answer: "Zalecamy przyniesienie własnego laptopa lub innego sprzętu, który może być potrzebny do pracy nad projektem. Zapewniamy dostęp do Wi-Fi oraz podstawowe narzędzia i oprogramowanie."
+                }
+            ]
+
+            function createFAQ(FAQ) {
+                const faqElement = document.getElementById("faq");
+
+                FAQ.forEach((quest, index) =>{
+                    let details = document.createElement("details");
+
+                    let summary = document.createElement("summary");
+                    summary.textContent = quest.question;
+
+                    let p = document.createElement("p");
+                    p.innerHTML = quest.answer;
+
+                    details.appendChild(summary);
+                    details.appendChild(p);
+
+                    faqElement.appendChild(details);
+                });
+            }
+
+            createFAQ(FAQ);
         </script>
 
         <!-- timeline -->
@@ -412,73 +494,7 @@
         </script>
 
         <!-- pixels falling effect -->
-        <script>
-            const starCount = 75;
-            const starColor = "rgba(255, 255, 255, 0.5)";
-            const starContainer = document.createElement("div");
-
-            starContainer.style.position = "fixed";
-            starContainer.style.top = "0";
-            starContainer.style.left = "0";
-            starContainer.style.width = "100%";
-            starContainer.style.height = "100%";
-            starContainer.style.pointerEvents = "none";
-            starContainer.style.overflow = "hidden";
-            starContainer.style.zIndex = "-1";
-
-            document.body.appendChild(starContainer);
-
-            function getDocumentHeight() {
-                return Math.max(
-                    document.body.scrollHeight,
-                    document.documentElement.scrollHeight,
-                    document.body.offsetHeight,
-                    document.documentElement.offsetHeight,
-                    document.documentElement.clientHeight
-                );
-            }
-
-            function createStars() {
-                while (starContainer.firstChild) {
-                    starContainer.removeChild(starContainer.firstChild);
-                }
-                
-                const docHeight = getDocumentHeight();
-                
-                for (let i = 0; i < starCount; i++) {
-                    let starSize = Math.floor(Math.random() * 16) + 10; /* (10 - 25px) */
-            
-                    const star = document.createElement("div");
-                    star.style.position = "absolute";
-                    star.style.width = `${starSize}px`;
-                    star.style.height = `${starSize}px`;
-                    star.style.backgroundColor = starColor;
-                    star.style.opacity = Math.random() * 0.5 + 0.5;
-                    
-                    star.style.top = `-${starSize}px`;
-                    star.style.left = `${Math.random() * 100}vw`;
-                    
-                    starContainer.appendChild(star);
-
-                    const fallDuration = Math.random() * 6000 + 6000; // (6-12 sek)
-
-                    const initialOffset = -Math.random() * fallDuration;
-                    
-                    star.animate([
-                        { transform: `translateY(0)` },
-                        { transform: `translateY(${docHeight + starSize}px)` }
-                    ], {
-                        duration: fallDuration,
-                        delay: initialOffset,
-                        easing: "linear",
-                        iterations: Infinity
-                    });
-                }
-            }
-
-            createStars();
-            window.addEventListener("resize", createStars);
-        </script>
+        <script src="/pixels.js"></script>
 
         <!-- dobrze szukasz (: -->
         <script>
