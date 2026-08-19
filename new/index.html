@@ -480,17 +480,16 @@
 
         <!-- open one <details> at a time -->
         <script>
-            let allDetails = document.querySelectorAll("details");
-            allDetails.forEach((details) => {
-                details.addEventListener("click", () => {
-                    allDetails.forEach((otherDetails) => {
-                        if (otherDetails !== details) {
-                            otherDetails.removeAttribute("open");
+            let allDetailsSummary = document.querySelectorAll("details>summary");
+            allDetailsSummary.forEach((detailsSummary) => {
+                detailsSummary.addEventListener("click", () => {
+                    allDetailsSummary.forEach((otherDetailsSummary) => {
+                        if (otherDetailsSummary !== detailsSummary) {
+                            otherDetailsSummary.parentElement.removeAttribute("open");
                         }
                     });
                 });
             });
-
         </script>
 
         <!-- pixels falling effect -->
