@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <title>ZSKathonoZgody</title>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Druga edycja ZSKathonu!" />
+        <meta name="author" content="ZSKathon" />
+        <meta http-equiv="refresh" content="1800" />
+
+        <!-- Discord Embed -->
+
+        <meta name="og:title" content="ZSKathon27"/>
+        <meta name="og:description" content="Zapisz się już teraz na DRUGI hackathon w historii ZSK! Do zobaczenia 24-25 maja!"/>
+        <meta name="og:url" content="https://zskathon.vercel.app/"/>
+        <meta name="og:image" content="https://zskathon.vercel.app/embed.png"/>
+    
+        <!-- Link Tags -->
+    
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="stylesheet" type="text/css" href="/baseStyle.css" />
+
+    </head>
+    <body>
+        <main style="background-color: rgba(0, 0, 0, 0); height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: flex-end;">
+            <section class="card">
+                regulamin
+                <br>
+                zgoda
+                <br>
+                wizerunek
+            </section>
+
+            <footer style="margin-top: 40vh;">
+                <p>&copy; Made with &hearts; by&nbsp;<a href="https://www.zsk.poznan.pl" target="_blank">ZSK_Poznań</a>&nbsp;<span id="footer_date">2026</span></p>
+                <p>|</p>
+                <p><a href="mailto:zskathon@gmail.com" target="_blank">Kontakt</a></p>
+                <p id="ver1"></p>
+                <p id="ver"></p>
+            </footer>
+        </main>
+
+        <script>
+            fetch('/api/version')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('ver1').textContent = '|';
+                    document.getElementById('ver').textContent = data.version;
+                    document.getElementById('footer_date').textContent = data.year;
+                })
+                .catch(err => {
+                    console.error('Error fetching version:', err);
+                    document.getElementById('ver').textContent = '';
+                });
+        </script>
+
+        <!-- googl -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4WHQGPXYFT"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-4WHQGPXYFT');
+            // zgadza się, liczymy ile osób tu zajrzało na stronkę ;)
+        </script>
+
+        <!-- /* pixels falling effect */ -->
+        <script src="/pixels.js"></script>
+    </body>
+</html>
