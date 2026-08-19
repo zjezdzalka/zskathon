@@ -80,115 +80,8 @@
            <section class="card">
                 <!--left right left right style, three columns (mid - are the dots), grid, and until >800px do not do standarised text right dots left-->
                 <h2>Harmonogram</h2>
-                <div class="timeline">
-                    <!--do zautomatyzowania przez js, bo za dużo wklejania i wyliczania-->
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>23 maja, 09:00</strong> Rozpoczęcie rejestracji
-                            <i>Szkoła będzie zamknięta dla uczestników dopóki akredytacja się nie rozpocznie.</i>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>23 maja, 10:30</strong> Koniec rejestracji
-                            <i>Zamknięcie szkoły dla osób z zewnątrz.</i>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>23 maja, 11:00</strong> Ogłoszenie tematu
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>23 maja, 11:10-21:00</strong> Praca nad projektami
-                            <i>W między czasie pojawią się prezentacje :]</i>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>23 maja, 21:00</strong> Czas na integrację, gry i jedzonko
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>23 maja, 22:00-11:00</strong> Ostatnie poprawki i prezentacje
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>24 maja, 13:00</strong> Ogłoszenie trzech najlepszych projektów
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                            <div class="line"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>24 maja, 13:30-14:45</strong> Prezentacje i pitch top 3 zespołów
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="tml-left">
-                            <div class="line"></div>
-                            <div class="circle"></div>
-                        </div>
-                        <div class="tml-content">
-                            <strong>24 maja, 15:00</strong> Ogłoszenie zwycięskiej drużyny ZSKathon'u
-                        </div>
-                    </div>
-                </div>
+                <div class="timeline"></div>
             </section>
-
-            <!--<section class="card">
-                <h2>Harmonogram</h2>
-                <ul>
-                    <li><strong>24 maja, 09:00</strong> – Rozpoczęcie rejestracji</li>
-                    <li><strong>24 maja, 11:00</strong> – Koniec rejestracji i ogłoszenie tematu</li>
-                    <li><strong>24 maja, 11:10-21:00</strong> – Praca nad projektami</li>
-                    <li><strong>24 maja, 21:00</strong> – Czas na integrację, gry i jedzonko</li>
-                    <li><strong>25 maja, 22:00-11:00</strong> – Ostatnie poprawki i prezentacje</li>
-                    <li><strong>25 maja, 13:00</strong> – Ogłoszenie trzech najlepszych projektów</li>
-                    <li><strong>25 maja, 13:30-14:45</strong> – Prezentacje i pitch'e top 3 zespołów</li>
-                    <li><strong>25 maja, 15:00</strong> – Ogłoszenie zwyciężcy ZSKathon'u</li>
-                </ul>
-            </section>-->
             
             <section class="card">
                 <h2>FAQ</h2>
@@ -275,71 +168,77 @@
             // zgadza się, liczymy ile osób tu zajrzało na stronkę ;)
         </script>
 
-        <!-- /* timer */ -->
+        <!-- timer -->
         <script>
             const searchParams = new URLSearchParams(window.location.search);
-            const testMode = searchParams.get("time") === "true"?true:false;
+            const timeMode = searchParams.get("time") === "true"?true:false;
 
-            const [countdownStart, eventStart, eventEnd] = loadDates(testMode);
+            const [countdownStart, eventStart, eventEnd] = loadDates(timeMode);
 
-            function loadDates(testMode){
+            function loadDates(timeMode){
                 let countdownStart, eventStart, eventEnd;
-                if(testMode){
+                if(timeMode){
                     const time = new Date();
                     countdownStart = time.getTime();
                     eventStart = countdownStart + 10 * 1000; 
-                    // const eventStart = new Date('2026-04-24T09:00:00').getTime();
                     eventEnd = countdownStart + 15 * 1000; 
                 }
                 else{
-                    countdownStart = new Date('2027-04-01T00:00:00').getTime();
-                    eventStart = new Date('2027-05-23T09:00:00').getTime();
-                    // const eventStart = new Date('2026-04-24T09:00:00').getTime();
-                    eventEnd = new Date('2027-05-24T16:00:00').getTime();
+                    /* tu modyfikujesz godziny wydarzenia */
+                    const countdownTimes = [
+                        {"time": "2027-04-01T00:00:00", "desc": "Rozpoczęcie odliczania"},
+                        {"time": "2027-05-23T09:00:00", "desc": "Rozpoczęcie wydarzenia"},
+                        {"time": "2027-05-24T16:00:00", "desc": "Zakończenie wydarzenia"}
+                    ];
+
+                    countdownStart = new Date(countdownTimes[0].time).getTime();
+                    eventStart = new Date(countdownTimes[1].time).getTime();
+                    eventEnd = new Date(countdownTimes[2].time).getTime();
                 }
 
                 return [countdownStart, eventStart, eventEnd];
             }
-            // const eventEnd = new Date('2026-04-25T23:59:59').getTime();
-            const totalCountdownDuration = eventStart - countdownStart;
-
-            function updateCountdown() {
+            
+            function updateCountdown(countdownStart, eventStart, eventEnd) {
                 const now = new Date().getTime();
-                let distance, progress, statusText;
+                let deltaT, progress, statusText;
+                
+                const totalCountdownDuration = eventStart - countdownStart;
 
                 if (now < eventStart) {
-                    distance = eventStart - 1 - now;
-                    const elapsed = now - countdownStart + 1000;
-                    progress = Math.max(0,Math.min((elapsed / (totalCountdownDuration-1)) * 100, 100));
+                    deltaT = eventStart - 1 - now; // -1ms bc it messes up the countdown by 1 second
+                    
+                    const elapsed = now - countdownStart + 1000; // +1s
 
-                    if (window.innerWidth <= 600) {
-                        document.getElementById("event-date").innerHTML = "23–24 maja";
-                        statusText = `${formatTime(distance)}`;
-                    } 
-                    else {
-                        document.getElementById("event-date").innerHTML = "23–24 maja&nbsp;";
-                        statusText = ` | ${formatTime(distance)}`;
+                    progress = Math.max(
+                        0, // prevent negative progress
+                        Math.min(
+                            (elapsed / (totalCountdownDuration-1)) * 100, // procent passed
+                            100 // prevent progress from exceeding 100%
+                        )
+                    );
+
+                    document.getElementById("event-date").innerHTML = "23–24 maja";
+                    statusText = `${formatTime(deltaT)}`;
+
+                    if (window.innerWidth > 600) {
+                        document.getElementById("event-date").innerHTML += "&nbsp;";
+                        statusText = " | " + statusText;
                     }
                 }
-                else if (now <= eventEnd) {
-                    progress = 100;
-                    if (window.innerWidth <= 600) {
-                        document.getElementById("event-date").innerHTML = "23–24 maja";
-                        statusText = "in progress...";
-                    }
-                    else {
-                        document.getElementById("event-date").innerHTML = "23–24 maja&nbsp;";
-                        statusText = " | in progress...";
-                    }
-                }
-                else {
+                else{
                     progress = 100;
                     document.getElementById("event-date").textContent = "";
-                    if (window.innerWidth <= 600) {
-                        statusText = "see you next edition! ⌨️";
-                    }
-                    else {
-                        statusText = "see you next edition! ⌨️";
+                    statusText = "see you next edition! ⌨️";
+
+                    if (now <= eventEnd) {
+                        document.getElementById("event-date").innerHTML = "23–24 maja";
+                        statusText = "in progress...";
+                        
+                        if (window.innerWidth > 600) {
+                            document.getElementById("event-date").innerHTML += "&nbsp;";
+                            statusText = " | " + statusText;
+                        }
                     }
                 }
 
@@ -365,29 +264,89 @@
                 return `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
 
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
+            updateCountdown(countdownStart, eventStart, eventEnd);
+            setInterval(() => updateCountdown(countdownStart, eventStart, eventEnd), 1000);
         </script>
 
-        <!-- /* timeline dot filler */ -->
+        <!-- timeline -->
         <script>
-
-            /* compress to one generation and not static */
             const eventTimes = [
-                { time: "2027-05-23T09:00:00", title: "Rozpoczęcie rejestracji", timeDelay: "20"},
-                { time: "2027-05-23T10:30:00", title: "Koniec rejestracji", timeDelay: "10"},
-                { time: "2027-05-23T11:00:00", title: "Ogłoszenie tematu", timeDelay: "10"},
-                { time: "2027-05-23T11:10:00", title: "Praca nad projektami", timeDelay: "590" },
-                { time: "2027-05-23T21:00:00", title: "Czas na integrację, gry i jedzonko", timeDelay: "60" },
-                { time: "2027-05-23T22:00:00", title: "Ostatnie poprawki i prezentacje", timeDelay: "900" },
-                { time: "2027-05-24T13:00:00", title: "Ogłoszenie trzech najlepszych projektów", timeDelay: "20" },
-                { time: "2027-05-24T13:30:00", title: "Prezentacje i pitch'e top 3 zespołów", timeDelay: "75" },
-                { time: "2027-05-24T15:00:00", title: "Ogłoszenie zwyciężcy ZSKathon'u", timeDelay: "20" }
+                // timeDelay to jest w minutach po ilu ma się zmienić status na skończony
+                { time: "2027-05-23T09:00:00", title: "Rozpoczęcie rejestracji", "desc": "Szkoła będzie zamknięta dla uczestników dopóki akredytacja się nie rozpocznie.", timeDelay: "20"},
+                { time: "2027-05-23T10:30:00", title: "Koniec rejestracji", "desc": "Zamknięcie szkoły dla osób z zewnątrz.", timeDelay: "10"},
+                { time: "2027-05-23T11:00:00", title: "Ogłoszenie tematu", "desc": "", timeDelay: "10"},
+                { time: "2027-05-23T11:10:00", title: "Praca nad projektami", "desc": "W między czasie pojawią się prezentacje :]", timeDelay: "590" },
+                { time: "2027-05-23T21:00:00", title: "Czas na integrację, gry i jedzonko", "desc": "", timeDelay: "60" },
+                { time: "2027-05-23T22:00:00", title: "Ostatnie poprawki i prezentacje", "desc": "", timeDelay: "900" },
+                { time: "2027-05-24T13:00:00", title: "Ogłoszenie trzech najlepszych projektów", "desc": "", timeDelay: "20" },
+                { time: "2027-05-24T13:30:00", title: "Prezentacje i pitch'e top 3 zespołów", "desc": "", timeDelay: "75" },
+                { time: "2027-05-24T15:00:00", title: "Ogłoszenie zwyciężcy ZSKathon'u", "desc": "", timeDelay: "20" }
             ]
+
+            /* create timeline */
+
+            createTimeline(eventTimes);
+
+            function createTimeline(eventTimes) {
+                const timelineContainer = document.querySelector(".timeline");
+
+                eventTimes.forEach((event, index) => {
+                    let timelineItem = document.createElement("div");
+                    timelineItem.classList.add("timeline-item");
+
+                    let tmlLeft = document.createElement("div");
+                    tmlLeft.classList.add("tml-left");
+
+                    let circle = document.createElement("div");
+                    circle.classList.add("circle");
+
+                    let line = document.createElement("div");
+                    line.classList.add("line");
+
+                    if(index == 0){
+                        tmlLeft.appendChild(circle);
+                        tmlLeft.appendChild(line);
+                    }
+                    else if(index == eventTimes.length - 1){
+                        tmlLeft.appendChild(line);
+                        tmlLeft.appendChild(circle);
+                    }
+                    else{
+                        tmlLeft.appendChild(line);
+                        tmlLeft.appendChild(circle);
+                        tmlLeft.appendChild(line.cloneNode(true));
+                    }
+
+                    let tmlContent = document.createElement("div");
+                    tmlContent.classList.add("tml-content");
+
+                    let strong = document.createElement("strong");
+                    strong.textContent = `${new Date(event.time).toLocaleDateString("pl-PL", {year:undefined, month: "long", day: "numeric"})}, `;
+                    strong.textContent += `${new Date(event.time).toLocaleTimeString("pl-PL", {hour: "2-digit", minute: "2-digit"})}`;
+                    let p = document.createElement("p");
+                    p.textContent = event.title;
+                    let i = document.createElement("i");
+                    i.textContent = event.desc!== "" ? event.desc : "";
+                    
+                    tmlContent.appendChild(strong);
+                    tmlContent.appendChild(p);
+
+                    if (i.textContent) {
+                        tmlContent.appendChild(i);
+                    }
+
+                    timelineItem.appendChild(tmlLeft);
+                    timelineItem.appendChild(tmlContent);
+
+                    timelineContainer.appendChild(timelineItem);
+                });
+            }
+
+            /* timeline dot filler */
 
             const timelineItems = document.querySelectorAll(".timeline-item");
             
-            function updateTimeline() {
+            function updateTimeline(eventTimes) {
                 const now = new Date().getTime();
 
                 eventTimes.forEach((event, index) => {
@@ -400,20 +359,22 @@
                     if (now >= eventTimeAfter) {
                         circle.classList.add("filled");
                         circle.classList.remove("current");
-                    } else if (now >= eventTime) {
+                    } 
+                    else if (now >= eventTime) {
                         circle.classList.add("current");
                         circle.classList.remove("filled");
-                    } else {
+                    } 
+                    else {
                         circle.classList.remove("filled", "current");
                     }
                 });
             }
 
-            updateTimeline();
-            setInterval(updateTimeline, 60_000); // Update every minute
+            updateTimeline(eventTimes);
+            setInterval(() => updateTimeline(eventTimes), 60_000); // Update every minute
         </script>
 
-        <!-- /* open one details at a time */ -->
+        <!-- open one <details> at a time -->
         <script>
             let allDetails = document.querySelectorAll("details");
             allDetails.forEach((details) => {
@@ -428,7 +389,7 @@
 
         </script>
 
-        <!-- /* pixels falling effect */ -->
+        <!-- pixels falling effect -->
         <script>
             const starCount = 75;
             const starColor = "rgba(255, 255, 255, 0.5)";
@@ -497,10 +458,10 @@
             window.addEventListener("resize", createStars);
         </script>
 
+        <!-- dobrze szukasz (: -->
         <script>
-            /* dobrze szukasz (: */
             /* make it a different keyword, not minecraft and chicken jockey anymore */
-            /* hidden in eval() include to external file, connect to tumblr, leads to discord server, encrypted message which leads to secret page with easter egg similar to this but more advanced */
+            /* hidden in eval() include to external file, leads to discord server, encrypted message which leads to secret unrelated page with easter egg similar to this but more advanced */
             let sequence = [];
             let additional = 10;
             /* offset */

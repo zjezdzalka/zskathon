@@ -151,7 +151,7 @@ h2 {
 .card {
     background: var(--background-blue-transparent);
     border-radius: 10px;
-    padding: 1.5rem;
+    padding: 2rem;
     margin-bottom: 2rem;
     height: auto;
 }
@@ -240,7 +240,6 @@ details > p > a{
 }
 
 .timeline{
-    /* MEOW */
     font-size: 100%;
 }
 
@@ -248,16 +247,16 @@ details > p > a{
     display: flex;
     align-items: center;
     position: relative;
-    height: 130px;
+    height: 160px;
 }
 
 .timeline-item:first-child{
     align-items: flex-start;
-    height: 110px;
+    height: 140px;
 }
 
 .timeline-item:first-child .tml-left > .line {
-    height: 40px;
+    height: 60px;
 }
 
 .timeline-item:first-child .tml-left{
@@ -273,16 +272,15 @@ details > p > a{
     user-select: none;
 }
 
-
 .tml-left > .line {
     width: 3px;
-    height: 50px;
+    height: 65px;
     background: var(--font-color);
 }
 
 .tml-left > .circle {
-    width: 30px;
     height: 30px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     border: 3px solid var(--font-color);
 }
@@ -298,11 +296,12 @@ details > p > a{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    height: 100px;
+    height: 130px;
     justify-content: center;
     width: 90%;
     /*box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);*/
 }
+
 
 .tml-content strong {
     color: var(--font-color);
@@ -310,10 +309,14 @@ details > p > a{
 }
 
 .tml-content p {
-    background: var(--background-dark-blue-transparent);
-    padding: 1rem;
+    padding: 0 1rem 0 0;
+    font-weight: 400;
+}
+
+.tml-content i {
+    padding: 0 1rem 0 0;
     border-radius: 8px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 300;
 }
 
