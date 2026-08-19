@@ -37,6 +37,10 @@
                     <div id="progress-bar"></div>
                     <div id="progress-text"></div>
                 </div>
+                <div id="stream-link-container" style="display: none; justify-content: center; width: 100%;">
+                    <p>check out out stream here:</p>
+                    <a href="#meow" target="_blank" style="margin-left: 0.5rem;">link</a>
+                </div>
             </header>
 
             <!--
@@ -73,7 +77,7 @@
             <section class="card">
                 <h2>Rejestracja</h2>
                 <p>Aby wziąć udział w wydarzeniu, zarejestruj swoją drużynę (2-5 osób) za pomocą poniższego formularza.</p>
-                <a href="" class="btn" target="_blank">S00N ;)</a>
+                <a href="" class="btn" target="_blank">S00N ;&#41;</a>
                 <!--<a href="https://forms.office.com/e/" class="btn" target="_blank">FORMULARZ</a>-->
             </section>
 
@@ -173,6 +177,8 @@
             const searchParams = new URLSearchParams(window.location.search);
             const timeMode = searchParams.get("time") === "true"?true:false;
 
+            const dateText = "23-24 maja"
+
             const [countdownStart, eventStart, eventEnd] = loadDates(timeMode);
 
             function loadDates(timeMode){
@@ -198,7 +204,9 @@
 
                 return [countdownStart, eventStart, eventEnd];
             }
-            
+
+            let isPaused = false;
+
             function updateCountdown(countdownStart, eventStart, eventEnd) {
                 const now = new Date().getTime();
                 let deltaT, progress, statusText;
@@ -218,7 +226,7 @@
                         )
                     );
 
-                    document.getElementById("event-date").innerHTML = "23–24 maja";
+                    document.getElementById("event-date").innerHTML = dateText;
                     statusText = `${formatTime(deltaT)}`;
 
                     if (window.innerWidth > 600) {
@@ -231,8 +239,11 @@
                     document.getElementById("event-date").textContent = "";
                     statusText = "see you next edition! ⌨️";
 
+                    if(isPaused) stopCountdownLoop();
+
                     if (now <= eventEnd) {
-                        document.getElementById("event-date").innerHTML = "23–24 maja";
+                        document.querySelector("header").style.paddingBottom = "2rem";
+                        document.getElementById("event-date").innerHTML = dateText;
                         statusText = "in progress...";
                         
                         if (window.innerWidth > 600) {
@@ -240,15 +251,20 @@
                             statusText = " | " + statusText;
                         }
                     }
+                    else {document.querySelector("header").style.paddingBottom = "0"; isPaused = true;}
                 }
 
                 document.getElementById("ctdwn").textContent = statusText;
                 document.getElementById("progress-bar").style.width = `${progress}%`;
                 
                 const progressBarContainer = document.getElementById("progress-bar-container");
+                const streamLinkContainer = document.getElementById("stream-link-container");
                 if (now >= eventStart) {
                     progressBarContainer.style.display = "none";
+                    streamLinkContainer.style.display = "flex";
                 }
+
+                if(now >= eventEnd) streamLinkContainer.style.display = "none";
 
                 const progressBar = document.getElementById("progress-text");
 
@@ -264,8 +280,14 @@
                 return `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
 
+            function stopCountdownLoop() {
+                clearInterval(loopInterval);
+                loopInterval = null;
+            }
+
             updateCountdown(countdownStart, eventStart, eventEnd);
-            setInterval(() => updateCountdown(countdownStart, eventStart, eventEnd), 1000);
+            let loopInterval = setInterval(() => updateCountdown(countdownStart, eventStart, eventEnd), 1000);
+
         </script>
 
         <!-- timeline -->
