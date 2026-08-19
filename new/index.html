@@ -147,85 +147,97 @@
 
         <!-- smooth scroll -->
         <script>
-            let currentScroll = window.pageYOffset;
-            let targetScroll = window.pageYOffset;
-            let isScrolling = false;
+            if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+                let currentScroll = window.pageYOffset;
+                let targetScroll = window.pageYOffset;
+                let isScrolling = false;
 
-            window.addEventListener('wheel', (e) => {
-                e.preventDefault();
-                if (!isScrolling) {
-                    currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                    targetScroll = currentScroll;
-                }
-                targetScroll += e.deltaY;
+                window.addEventListener('scroll', () => {
+                    if (!isScrolling) {
+                        currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                        targetScroll = currentScroll;
+                    }
+                });
 
-                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-                targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
+                window.addEventListener('wheel', (e) => {
+                    e.preventDefault();
 
-                if (!isScrolling) { isScrolling = true; requestAnimationFrame(updateSmoothScroll); }
-            }, { passive: false });
+                    if (!isScrolling) {
+                        currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                        targetScroll = currentScroll;
+                    }
 
-            function updateSmoothScroll() {
-                currentScroll += (targetScroll - currentScroll) * 0.1;
-                window.scrollTo(0, currentScroll);
+                    targetScroll += e.deltaY * 1.2;
 
-                if (Math.abs(targetScroll - currentScroll) > 0.5) requestAnimationFrame(updateSmoothScroll);
-                else isScrolling = false;
-            }
+                    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+                    targetScroll = Math.max(0, Math.min(targetScroll, maxScroll));
 
-            window.addEventListener('scroll', () => {
-                if (!isScrolling) {
-                    currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-                    targetScroll = currentScroll;
-                }
-            });
+                    if (!isScrolling) {
+                        isScrolling = true;
+                        requestAnimationFrame(updateSmoothScroll);
+                    }
+                }, { passive: false });
 
-            function smoothScrollTo(targetSelector, customDuration = "") {
-                const target = document.querySelector(targetSelector);
-                if (!target) return;
+                function updateSmoothScroll() {
+                    currentScroll += (targetScroll - currentScroll) * 0.1;
 
-                const startPosition = window.pageYOffset || document.documentElement.scrollTop;
-                
-                const headerOffset = 0; 
-                const targetPosition = target.getBoundingClientRect().top + startPosition - headerOffset;
-                const distance = targetPosition - startPosition;
+                    window.scrollTo(0, currentScroll);
 
-                if (Math.abs(distance) < 5) return;
-
-                let duration = customDuration!==""?customDuration:(Math.min(Math.max(Math.abs(distance) * 0.4, 350), 800));
-
-                let startTime = null;
-
-                function easeOut(x) {
-                    return 1 - Math.pow(1 - x, 5);
-                }
-
-                function animation(currentTime) {
-                    if (startTime === null) startTime = currentTime;
-                    const timeElapsed = currentTime - startTime;
-                    const progress = Math.min(timeElapsed / duration, 1);
-                    const easeProgress = easeOut(progress);
-
-                    window.scrollTo(0, startPosition + (distance * easeProgress));
-
-                    if (timeElapsed < duration) {
-                        requestAnimationFrame(animation);
+                    if (Math.abs(targetScroll - currentScroll) > 0.5) {
+                        requestAnimationFrame(updateSmoothScroll);
+                    } else {
+                        window.scrollTo(0, targetScroll);
+                        isScrolling = false;
                     }
                 }
 
-                requestAnimationFrame(animation);
-            }
+                function smoothScrollTo(targetSelector, customDuration = "") {
+                    const target = document.querySelector(targetSelector);
+                    if (!target) return;
 
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#' || !targetId) return;
-
-                    e.preventDefault();
+                    const startPosition = window.pageYOffset || document.documentElement.scrollTop;
                     
-                    smoothScrollTo(targetId, 1500); // ms
+                    const headerOffset = 0; 
+                    const targetPosition = target.getBoundingClientRect().top + startPosition - headerOffset;
+                    const distance = targetPosition - startPosition;
+
+                    if (Math.abs(distance) < 5) return;
+
+                    let duration = customDuration!==""?customDuration:(Math.min(Math.max(Math.abs(distance) * 0.4, 350), 800));
+
+                    let startTime = null;
+
+                    function easeOut(x) {
+                        return 1 - Math.pow(1 - x, 5);
+                    }
+
+                    function animation(currentTime) {
+                        if (startTime === null) startTime = currentTime;
+                        const timeElapsed = currentTime - startTime;
+                        const progress = Math.min(timeElapsed / duration, 1);
+                        const easeProgress = easeOut(progress);
+
+                        window.scrollTo(0, startPosition + (distance * easeProgress));
+
+                        if (timeElapsed < duration) {
+                            requestAnimationFrame(animation);
+                        }
+                    }
+
+                    requestAnimationFrame(animation);
+                }
+
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        const targetId = this.getAttribute('href');
+                        if (targetId === '#' || !targetId) return;
+
+                        e.preventDefault();
+                        
+                        smoothScrollTo(targetId, 1500); // ms
+                    });
                 });
-            });
+            }
         </script>
 
         <!-- timer -->

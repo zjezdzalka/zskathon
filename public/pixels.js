@@ -1,4 +1,4 @@
-const starCount = 75;
+const starCount = 100;
 const starColor = "rgba(255, 255, 255, 0.5)";
 const starContainer = document.createElement("div");
 
@@ -31,7 +31,7 @@ function createStars() {
     const docHeight = getDocumentHeight();
     
     for (let i = 0; i < starCount; i++) {
-        let starSize = Math.floor(Math.random() * 16) + 10; /* (10 - 25px) */
+        let starSize = Math.floor(Math.random() * 10) + 15; /* (10 - 25px) */
 
         const star = document.createElement("div");
         star.style.position = "absolute";
@@ -45,7 +45,7 @@ function createStars() {
         
         starContainer.appendChild(star);
 
-        const fallDuration = Math.random() * 6000 + 6000; // (6-12 sek)
+        const fallDuration = Math.random() * 15000 + 10000; // (6-12 sek)
 
         const initialOffset = -Math.random() * fallDuration;
         
