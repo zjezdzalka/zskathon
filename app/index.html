@@ -5,7 +5,7 @@
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Druga edycja ZSKathonu!" />
+        <meta name="description" content="ZSKathon, czyli miejsce w którym to TY wpływasz na problemy szkolne i tworzysz innowacyjne rozwiązania." />
         <meta name="author" content="ZSKathon" />
         <meta http-equiv="refresh" content="1800" />
 
@@ -118,7 +118,7 @@
                 
                 for (let i = 0; i < starCount; i++) {
                     let starSize = Math.floor(Math.random() * 16) + 10; /* (10 - 25px) */
-            
+
                     const star = document.createElement("div");
                     star.style.position = "absolute";
                     star.style.width = `${starSize}px`;
@@ -131,19 +131,19 @@
                     
                     starContainer.appendChild(star);
 
-                    // (6-12 sekund)
-                    const fallDuration = Math.random() * 6000 + 6000;
+                    const fallDuration = Math.random() * 6000 + 6000; // (6-12s)
                     
-                    const fallAnimation = star.animate([
+                    const initialOffset = -Math.random() * fallDuration;
+
+                    star.animate([
                         { transform: `translateY(0)` },
                         { transform: `translateY(${docHeight + starSize}px)` }
                     ], {
                         duration: fallDuration,
+                        delay: initialOffset,
                         easing: "linear",
                         iterations: Infinity
                     });
-
-                    fallAnimation.startTime = Math.random() * 9000;
                 }
             }
 

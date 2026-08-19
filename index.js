@@ -22,6 +22,11 @@ app.get('/', function(req, res){
   res.sendFile(path.join(siteDir, 'app', `index.html`));
 });
 
+/* 
+Yes, if you know about the source code, and know where to look, you can find this. 
+However this isn't supposed to be accessible to the public yet, therefore it is hidden.
+*/
+
 app.get('/unofficial', function(req, res){
   res.sendFile(path.join(siteDir, 'new', `index.html`));
 });
