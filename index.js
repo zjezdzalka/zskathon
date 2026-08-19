@@ -35,6 +35,14 @@ app.get('/archive', function(req, res){
     res.sendFile(path.join(siteDir, `archive.html`));
 });
 
+app.get('/zgody', function(req, res){
+    res.sendFile(path.join(siteDir, `zgody.html`));
+});
+
+app.get('/mapa', function(req, res){
+    res.sendFile(path.join(siteDir, `mapa.pdf`));
+});
+
 app.get('/:id', function(req, res){
   const {id} = req.params;
 
