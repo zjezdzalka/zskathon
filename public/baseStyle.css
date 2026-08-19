@@ -44,7 +44,6 @@ footer {
     font-size: 0.9rem;
     color: #aaa;
     padding: 1rem;
-    padding-bottom: 0;
     user-select: none;
     display: flex;
     flex-direction: row;

@@ -32,21 +32,43 @@ body {
     line-height: 1.5;
     width: 100%;
     font-weight: 300;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 main{
     background-color: var(--background-dark-blue-transparent);
     min-height: 100vh;
-    padding: 1.5rem 2rem 0 2rem;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-header, section, footer {
+nav > a{
+    background-color: var(--background-blue-transparent);
+    padding: 0.5em;
+    font-size: 1.5rem;
+    color: var(--white);
+    font-family: 'CubicFive10', "Lexend", sans-serif;
+    transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
+    margin-left: 0.5rem;
+}
+
+nav > a:hover{
+    background-color: var(--background-blue-transparent);
+    padding: 0.5em;
+    color: var(--white-half-transparent);
+}
+
+nav, header, section, footer {
     max-width: 1000px;
     margin: auto;
     padding: 2rem 1rem;
+}
+
+nav{
+    display: flex; 
+    justify-content: flex-end;
+    text-underline-offset: 0.5rem;
+    padding: 0;
 }
 
 header {
