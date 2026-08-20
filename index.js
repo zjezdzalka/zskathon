@@ -4,7 +4,7 @@ const { getGitInfo } = require('./getVersion');
 const fs = require('fs');
 
 const app = express();
-const port = 666;
+const port = 2514;
 
 const safeRegex = /^[0-9]+$/;
 
