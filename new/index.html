@@ -105,6 +105,7 @@
                 <div class="partner-logo"></div>
                 <div class="partner-logo"></div>
                 </div>
+                <div class="interested-partners">Zainteresowany partnerstwem? Napisz do nas: zskathon+partnerzy@gmail.com</p>
             </section>
 
             <footer>
@@ -245,7 +246,7 @@
             const searchParams = new URLSearchParams(window.location.search);
             const timeMode = searchParams.get("time") === "true"?true:false;
 
-            const dateText = "23-24 maja"
+            const dateText = "6-7 marca"
 
             const [countdownStart, eventStart, eventEnd] = loadDates(timeMode);
 
@@ -260,9 +261,9 @@
                 else{
                     /* tu modyfikujesz godziny wydarzenia */
                     const countdownTimes = [
-                        {"time": "2027-04-01T00:00:00", "desc": "Rozpoczęcie odliczania"},
-                        {"time": "2027-05-23T09:00:00", "desc": "Rozpoczęcie wydarzenia"},
-                        {"time": "2027-05-24T16:00:00", "desc": "Zakończenie wydarzenia"}
+                        {"time": "2026-09-01T00:00:00", "desc": "Rozpoczęcie odliczania"},
+                        {"time": "2027-03-06T09:00:00", "desc": "Rozpoczęcie wydarzenia"},
+                        {"time": "2027-03-07T16:00:00", "desc": "Zakończenie wydarzenia"}
                     ];
 
                     countdownStart = new Date(countdownTimes[0].time).getTime();
@@ -421,15 +422,15 @@
         <script>
             const eventTimes = [
                 // timeDelay to jest w minutach po ilu ma się zmienić status na skończony
-                { time: "2027-05-23T09:00:00", title: "Rozpoczęcie rejestracji", "desc": "Szkoła będzie zamknięta dla uczestników dopóki akredytacja się nie rozpocznie.", timeDelay: "20"},
-                { time: "2027-05-23T10:30:00", title: "Koniec rejestracji", "desc": "Zamknięcie szkoły dla osób z zewnątrz.", timeDelay: "10"},
-                { time: "2027-05-23T11:00:00", title: "Ogłoszenie tematu", "desc": "", timeDelay: "10"},
-                { time: "2027-05-23T11:10:00", title: "Praca nad projektami", "desc": "W między czasie pojawią się prezentacje :]", timeDelay: "590" },
-                { time: "2027-05-23T21:00:00", title: "Czas na integrację, gry i jedzonko", "desc": "", timeDelay: "60" },
-                { time: "2027-05-23T22:00:00", title: "Ostatnie poprawki i prezentacje", "desc": "", timeDelay: "900" },
-                { time: "2027-05-24T13:00:00", title: "Ogłoszenie trzech najlepszych projektów", "desc": "", timeDelay: "20" },
-                { time: "2027-05-24T13:30:00", title: "Prezentacje i pitch'e top 3 zespołów", "desc": "", timeDelay: "75" },
-                { time: "2027-05-24T15:00:00", title: "Ogłoszenie zwyciężcy ZSKathon'u", "desc": "", timeDelay: "20" }
+                { time: "2027-03-06T09:00:00", title: "Rozpoczęcie rejestracji", "desc": "Szkoła będzie zamknięta dla uczestników dopóki akredytacja się nie rozpocznie.", timeDelay: "20"},
+                { time: "2027-03-06T10:30:00", title: "Koniec rejestracji", "desc": "Zamknięcie szkoły dla osób z zewnątrz.", timeDelay: "10"},
+                { time: "2027-03-06T11:00:00", title: "Ogłoszenie tematu", "desc": "", timeDelay: "10"},
+                { time: "2027-03-06T11:10:00", title: "Praca nad projektami", "desc": "W między czasie pojawią się prezentacje :]", timeDelay: "590" },
+                { time: "2027-03-06T21:00:00", title: "Czas na integrację, gry i jedzonko", "desc": "", timeDelay: "60" },
+                { time: "2027-03-06T22:00:00", title: "Ostatnie poprawki i prezentacje", "desc": "", timeDelay: "900" },
+                { time: "2027-03-07T13:00:00", title: "Ogłoszenie trzech najlepszych projektów", "desc": "", timeDelay: "20" },
+                { time: "2027-03-07T13:30:00", title: "Prezentacje i pitch'e top 3 zespołów", "desc": "", timeDelay: "75" },
+                { time: "2027-03-07T15:00:00", title: "Ogłoszenie zwyciężcy ZSKathon'u", "desc": "", timeDelay: "20" }
             ]
 
             /* create timeline */

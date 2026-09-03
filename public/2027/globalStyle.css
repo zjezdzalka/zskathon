@@ -83,10 +83,6 @@ footer{
     padding-bottom: 0;
 }
 
-header h1 p{
-    margin-left: 1rem;
-}
-
 header h1 {
     /* font-size: 41.573px; */
     font-size: 2em;
@@ -103,6 +99,7 @@ header h1 {
 }
 
 header h1 p{
+    margin-left: 1rem;
     font-size: 1.6em;
     font-weight: 100;
 }
@@ -186,6 +183,16 @@ h2 {
 .card > p{
     font-size: 1.1rem;
 }
+
+.interested-partners{
+    font-size: 0.9rem;
+    font-style:italic;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
 
 ul {
     padding-left: 1.5rem;
