@@ -27,8 +27,12 @@ Yes, if you know about the source code, and know where to look, you can find thi
 However this isn't supposed to be accessible to the public yet, therefore it is hidden.
 */
 
-app.get('/unofficial', function(req, res){
+app.get('/upcoming', function(req, res){
   res.sendFile(path.join(siteDir, 'new', `index.html`));
+});
+
+app.get('/help', function(req, res){
+  res.sendFile(path.join(siteDir, `infografika.html`));
 });
 
 app.get('/archive', function(req, res){
@@ -68,7 +72,7 @@ app.listen(port, () => {
   console.log(`everything works! yippee :3 http://localhost:${port} <~ hosted here`);
   console.log(`current commit: ${getGitInfo()}`);
   console.log(`datetime started: ${new Date().toISOString()}`);
-  console.log(`testing new site locally here: http://localhost:${port}/unofficial?time=true`);
+  console.log(`testing new site locally here: http://localhost:${port}/upcoming?time=true`);
 });
 
 module.exports = app;

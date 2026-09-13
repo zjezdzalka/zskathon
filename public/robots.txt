@@ -1,2 +1,3 @@
 # hi :3
-# no secrets here
+# no secrets yet here
+# possibly might be migrated to local server to fix google SEO search
