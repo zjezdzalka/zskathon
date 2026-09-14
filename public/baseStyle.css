@@ -14,6 +14,16 @@
     --font-color: #DEF249;
 }
 
+@font-face {
+    font-family: 'CubicFive10';
+    src:url('/fonts/CubicFive10.ttf.woff') format('woff'),
+        url('/fonts/CubicFive10.ttf.svg#CubicFive10') format('svg'),
+        url('/fonts/CubicFive10.ttf.eot'),
+        url('/fonts/CubicFive10.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     font-family: "Lexend", sans-serif, monospace;
     background: linear-gradient(to bottom right, var(--background-dark-blue), var(--background-blue));
@@ -102,4 +112,20 @@ details > p > a{
     color: var(--font-color);
     text-decoration: underline;
     text-underline-offset: 3px;
+}
+
+#soon{
+    font-size: 5rem;
+}
+
+@media (max-width: 800px) {
+    #soon{
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #soon{
+        font-size: 3.5rem;
+    }
 }

@@ -16,10 +16,10 @@
 
 @font-face {
     font-family: 'CubicFive10';
-    src:url('CubicFive10.ttf.woff') format('woff'),
-        url('CubicFive10.ttf.svg#CubicFive10') format('svg'),
-        url('CubicFive10.ttf.eot'),
-        url('CubicFive10.ttf.eot?#iefix') format('embedded-opentype'); 
+    src:url('/fonts/CubicFive10.ttf.woff') format('woff'),
+        url('/fonts/CubicFive10.ttf.svg#CubicFive10') format('svg'),
+        url('/fonts/CubicFive10.ttf.eot'),
+        url('/fonts/CubicFive10.ttf.eot?#iefix') format('embedded-opentype'); 
     font-weight: normal;
     font-style: normal;
 }
