@@ -13,9 +13,11 @@ In 2025 we successfully organised a hackathon for 50 pupils.
 
 # How to install?
 
-`git clone <url>`
+`git clone https://github.com/zjezdzalka/zskathon.git`
+
 `cd zskathon`
-`npm i`
+
+`npm run setup` -> from this point the app should automatically run
 
 # How to run?
 
