@@ -116,7 +116,7 @@
             </section>
 
             <footer>
-                <p>&copy; Made with &hearts; by&nbsp;<a href="https://www.zsk.poznan.pl" target="_blank">ZSK_Poznań</a>&nbsp;<span id="footer_date">2026</span></p>
+                <p>&copy; Made with &hearts; by&nbsp;<a href="https://github.com/zjezdzalka" target="_blank">rytui</a>&nbsp;<span id="footer_date">2026</span></p>
                 <p>|</p>
                 <p><a href="" target="_blank">Regulamin</a></p>
                 <p>|</p>
@@ -327,7 +327,11 @@
                             statusText = " - " + statusText;
                         }
                     }
-                    else {document.querySelector("header").style.paddingBottom = "0"; isPaused = true;}
+                    else {
+                        document.querySelector("header").style.paddingBottom = "0"; 
+                        document.querySelector("#ctdwn").style.marginBottom = "1rem";
+                        isPaused = true; 
+                    }
                 }
 
                 document.getElementById("ctdwn").textContent = statusText;
