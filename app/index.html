@@ -71,6 +71,7 @@
                 .then(data => {
                     document.getElementById('ver1').textContent = '|';
                     document.getElementById('ver').textContent = data.version;
+                    document.getElementById('ver').setAttribute("href", `https://github.com/zjezdzalka/zskathon/commit/` + data.version.split("@")[1])
                     document.getElementById('footer_date').textContent = data.year;
                 })
                 .catch(err => {
