@@ -33,7 +33,7 @@
                 <p>|</p>
                 <p><a href="mailto:zskathon+error@gmail.com" target="_blank">Zgłoś tutaj error</a></p>
                 <p id="ver1"></p>
-                <p id="ver"></p>
+                <a id="ver"></a>
             </footer>
         </main>
 
@@ -43,6 +43,7 @@
                 .then(data => {
                     document.getElementById('ver1').textContent = '|';
                     document.getElementById('ver').textContent = data.version;
+                    document.getElementById('ver').setAttribute("href", `https://github.com/zjezdzalka/zskathon/commit/` + data.version.split("@")[1])
                     document.getElementById('footer_date').textContent = data.year;
                 })
                 .catch(err => {
